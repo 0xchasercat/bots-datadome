@@ -1,0 +1,1007 @@
+{
+  "signalCount": 201,
+  "signals": [
+    {
+      "name": "nddc",
+      "value": 1,
+      "t_ms": 3617
+    },
+    {
+      "name": "r3n",
+      "value": 33,
+      "t_ms": 3617
+    },
+    {
+      "name": "exp8",
+      "value": 0,
+      "t_ms": 3617
+    },
+    {
+      "name": "plu",
+      "value": "PDF Viewer,Chrome PDF Viewer,Chromium PDF Viewer,Microsoft Edge PDF Viewer,WebKit built-in PDF",
+      "t_ms": 3623
+    },
+    {
+      "name": "plgod",
+      "value": false,
+      "t_ms": 3624
+    },
+    {
+      "name": "plg",
+      "value": 5,
+      "t_ms": 3624
+    },
+    {
+      "name": "plgne",
+      "value": true,
+      "t_ms": 3624
+    },
+    {
+      "name": "plgre",
+      "value": true,
+      "t_ms": 3624
+    },
+    {
+      "name": "plgof",
+      "value": false,
+      "t_ms": 3624
+    },
+    {
+      "name": "plggt",
+      "value": false,
+      "t_ms": 3624
+    },
+    {
+      "name": "bfr",
+      "value": false,
+      "t_ms": 3624
+    },
+    {
+      "name": "hdn",
+      "value": false,
+      "t_ms": 3624
+    },
+    {
+      "name": "br_w",
+      "value": 1366,
+      "t_ms": 3624
+    },
+    {
+      "name": "br_h",
+      "value": 900,
+      "t_ms": 3624
+    },
+    {
+      "name": "br_iw",
+      "value": 1366,
+      "t_ms": 3624
+    },
+    {
+      "name": "br_ih",
+      "value": 900,
+      "t_ms": 3624
+    },
+    {
+      "name": "ars_w",
+      "value": 1366,
+      "t_ms": 3624
+    },
+    {
+      "name": "ars_h",
+      "value": 900,
+      "t_ms": 3624
+    },
+    {
+      "name": "rs_w",
+      "value": 1366,
+      "t_ms": 3624
+    },
+    {
+      "name": "rs_h",
+      "value": 900,
+      "t_ms": 3624
+    },
+    {
+      "name": "rs_cd",
+      "value": 24,
+      "t_ms": 3624
+    },
+    {
+      "name": "cg_w",
+      "value": 8,
+      "t_ms": 3624
+    },
+    {
+      "name": "cg_h",
+      "value": 131,
+      "t_ms": 3624
+    },
+    {
+      "name": "sg_w",
+      "value": -8,
+      "t_ms": 3624
+    },
+    {
+      "name": "sg_h",
+      "value": -131,
+      "t_ms": 3624
+    },
+    {
+      "name": "pr",
+      "value": 1,
+      "t_ms": 3624
+    },
+    {
+      "name": "so",
+      "value": "landscape-primary",
+      "t_ms": 3624
+    },
+    {
+      "name": "trrd",
+      "value": 1.2556353173737136,
+      "t_ms": 3624
+    },
+    {
+      "name": "ucdv",
+      "value": false,
+      "t_ms": 3624
+    },
+    {
+      "name": "dp0",
+      "value": false,
+      "t_ms": 3624
+    },
+    {
+      "name": "hcovdr",
+      "value": false,
+      "t_ms": 3624
+    },
+    {
+      "name": "plovdr",
+      "value": false,
+      "t_ms": 3624
+    },
+    {
+      "name": "ftsovdr",
+      "value": false,
+      "t_ms": 3624
+    },
+    {
+      "name": "orf",
+      "value": "",
+      "t_ms": 3625
+    },
+    {
+      "name": "dffls",
+      "value": "Polymath,PolymathDisplay,KaTeX_AMS,KaTeX_Caligraphic,KaTeX_Fraktur,KaTeX_Main,KaTeX_Math,KaTeX_SansSerif,KaTeX_Script,KaTeX_Size1,KaTeX_Size2,KaTeX_Size3,KaTeX_Size4,KaTeX_Typewriter",
+      "t_ms": 3625
+    },
+    {
+      "name": "niet",
+      "value": "4g",
+      "t_ms": 3625
+    },
+    {
+      "name": "nid",
+      "value": 10,
+      "t_ms": 3625
+    },
+    {
+      "name": "nisd",
+      "value": false,
+      "t_ms": 3625
+    },
+    {
+      "name": "nt_tcp",
+      "value": 0,
+      "t_ms": 3625
+    },
+    {
+      "name": "nt_dns",
+      "value": 0,
+      "t_ms": 3625
+    },
+    {
+      "name": "nt_rd",
+      "value": 0,
+      "t_ms": 3625
+    },
+    {
+      "name": "nt_irt",
+      "value": -3.59999942779541,
+      "t_ms": 3625
+    },
+    {
+      "name": "nt_rt",
+      "value": 1156.2000007629395,
+      "t_ms": 3625
+    },
+    {
+      "name": "nt_tls",
+      "value": 2.6999998092651367,
+      "t_ms": 3625
+    },
+    {
+      "name": "nt_ttf",
+      "value": 1284.1000003814697,
+      "t_ms": 3625
+    },
+    {
+      "name": "nt_swt",
+      "value": 0.8999996185302734,
+      "t_ms": 3625
+    },
+    {
+      "name": "nt_csd",
+      "value": 144517,
+      "t_ms": 3625
+    },
+    {
+      "name": "nt_nhp",
+      "value": "h2",
+      "t_ms": 3625
+    },
+    {
+      "name": "nt_rdc",
+      "value": 0,
+      "t_ms": 3625
+    },
+    {
+      "name": "nt_it",
+      "value": "navigation",
+      "t_ms": 3625
+    },
+    {
+      "name": "nt_prs",
+      "value": 2.6999998092651367,
+      "t_ms": 3625
+    },
+    {
+      "name": "nt_esc",
+      "value": 0,
+      "t_ms": 3625
+    },
+    {
+      "name": "nt_ttrd",
+      "value": null,
+      "t_ms": 3625
+    },
+    {
+      "name": "nt_le",
+      "value": 0,
+      "t_ms": 3625
+    },
+    {
+      "name": "nt_dcle",
+      "value": 0.5,
+      "t_ms": 3625
+    },
+    {
+      "name": "nt_di",
+      "value": 2833.5999994277954,
+      "t_ms": 3625
+    },
+    {
+      "name": "nt_dc",
+      "value": 0,
+      "t_ms": 3625
+    },
+    {
+      "name": "lg",
+      "value": "en-US",
+      "t_ms": 3625
+    },
+    {
+      "name": "isb",
+      "value": false,
+      "t_ms": 3625
+    },
+    {
+      "name": "idp",
+      "value": true,
+      "t_ms": 3625
+    },
+    {
+      "name": "crt",
+      "value": 250,
+      "t_ms": 3625
+    },
+    {
+      "name": "vnd",
+      "value": "Google Inc.",
+      "t_ms": 3625
+    },
+    {
+      "name": "bid",
+      "value": "NA",
+      "t_ms": 3625
+    },
+    {
+      "name": "med",
+      "value": "defined",
+      "t_ms": 3625
+    },
+    {
+      "name": "pltod",
+      "value": false,
+      "t_ms": 3625
+    },
+    {
+      "name": "wdifrm",
+      "value": false,
+      "t_ms": 3625
+    },
+    {
+      "name": "iwgl",
+      "t_ms": 3625
+    },
+    {
+      "name": "npmtm",
+      "value": false,
+      "t_ms": 3625
+    },
+    {
+      "name": "wdif",
+      "value": false,
+      "t_ms": 3625
+    },
+    {
+      "name": "ccsT",
+      "value": "Error\nat y1 (https://js.datadome.co/tags.js:2:100776)\nat i1.I (https://js.datadome.co/tags.js:2:78419)\nat https://js.datadome.co/tags.js:2:99273\nat ht",
+      "t_ms": 3625
+    },
+    {
+      "name": "ccsB",
+      "value": "ags.js:2:100776)\nat i1.I (https://js.datadome.co/tags.js:2:78419)\nat https://js.datadome.co/tags.js:2:99273\nat https://js.datadome.co/tags.js:2:106306",
+      "t_ms": 3625
+    },
+    {
+      "name": "ccsH",
+      "value": 779326173,
+      "t_ms": 3625
+    },
+    {
+      "name": "mmt",
+      "value": "application/pdf,text/pdf",
+      "t_ms": 3626
+    },
+    {
+      "name": "wdifpnh",
+      "value": "656510437",
+      "t_ms": 3626
+    },
+    {
+      "name": "vco",
+      "value": "",
+      "t_ms": 3626
+    },
+    {
+      "name": "vcots",
+      "value": false,
+      "t_ms": 3626
+    },
+    {
+      "name": "vch",
+      "value": "probably",
+      "t_ms": 3626
+    },
+    {
+      "name": "vchts",
+      "value": true,
+      "t_ms": 3626
+    },
+    {
+      "name": "vcw",
+      "value": "probably",
+      "t_ms": 3627
+    },
+    {
+      "name": "vcwts",
+      "value": true,
+      "t_ms": 3627
+    },
+    {
+      "name": "vc3",
+      "value": "maybe",
+      "t_ms": 3627
+    },
+    {
+      "name": "vc3ts",
+      "value": false,
+      "t_ms": 3627
+    },
+    {
+      "name": "vcmp",
+      "value": "",
+      "t_ms": 3627
+    },
+    {
+      "name": "vcmpts",
+      "value": false,
+      "t_ms": 3627
+    },
+    {
+      "name": "vc1",
+      "value": "probably",
+      "t_ms": 3627
+    },
+    {
+      "name": "vc1ts",
+      "value": true,
+      "t_ms": 3627
+    },
+    {
+      "name": "vcmk",
+      "value": "maybe",
+      "t_ms": 3627
+    },
+    {
+      "name": "vcmkuts",
+      "value": false,
+      "t_ms": 3627
+    },
+    {
+      "name": "vcq",
+      "value": "",
+      "t_ms": 3627
+    },
+    {
+      "name": "vcqts",
+      "value": false,
+      "t_ms": 3627
+    },
+    {
+      "name": "cssS",
+      "value": "1.69,0.99,11.60,12.18,4.88,4.34,9.02,10.77,12.38",
+      "t_ms": 3627
+    },
+    {
+      "name": "css0",
+      "value": "20, 61, 2",
+      "t_ms": 3627
+    },
+    {
+      "name": "css1",
+      "value": "11.9699, 2.24687, -0.161146, 0.0178654, 0.708851, -3.57056, 2.86879, -0.318047, 0.557177, -3.20186, -3.25674, 0.361058, 5.02573, -28.8808, -29.3758, 4.25674",
+      "t_ms": 3627
+    },
+    {
+      "name": "cssH",
+      "value": "0px",
+      "t_ms": 3627
+    },
+    {
+      "name": "iccsH",
+      "value": 2598265597,
+      "t_ms": 3627
+    },
+    {
+      "name": "iccsV",
+      "value": ",fb9c3495d5a7cdc9fda5644f3463d54c075b15b854fa06492034d589a3794e50,,fb9c3495d5a7cdc9fda5644f3463d54c075b15b854fa06492034d589a3794e50",
+      "t_ms": 3627
+    },
+    {
+      "name": "csssp",
+      "value": "",
+      "t_ms": 3628
+    },
+    {
+      "name": "muev",
+      "value": false,
+      "t_ms": 3628
+    },
+    {
+      "name": "pro_t",
+      "value": true,
+      "t_ms": 3628
+    },
+    {
+      "name": "wglo",
+      "value": true,
+      "t_ms": 3628
+    },
+    {
+      "name": "prso",
+      "value": true,
+      "t_ms": 3628
+    },
+    {
+      "name": "wbst",
+      "value": true,
+      "t_ms": 3628
+    },
+    {
+      "name": "psn",
+      "value": true,
+      "t_ms": 3628
+    },
+    {
+      "name": "edp",
+      "value": true,
+      "t_ms": 3628
+    },
+    {
+      "name": "addt",
+      "value": true,
+      "t_ms": 3628
+    },
+    {
+      "name": "wsdc",
+      "value": true,
+      "t_ms": 3628
+    },
+    {
+      "name": "ccsr",
+      "value": true,
+      "t_ms": 3628
+    },
+    {
+      "name": "nuad",
+      "value": true,
+      "t_ms": 3628
+    },
+    {
+      "name": "bcda",
+      "value": false,
+      "t_ms": 3628
+    },
+    {
+      "name": "idn",
+      "value": true,
+      "t_ms": 3628
+    },
+    {
+      "name": "capi",
+      "value": false,
+      "t_ms": 3628
+    },
+    {
+      "name": "svde",
+      "value": false,
+      "t_ms": 3628
+    },
+    {
+      "name": "vpbq",
+      "value": true,
+      "t_ms": 3628
+    },
+    {
+      "name": "bchk",
+      "value": "3223aeb6721e0d0917e7928181193ac88dcd62fbd5cadfbe7a2b2b473ecf58ee70f018dbdb1a1832e8dc6528387b0745971dbcd82384261e9a4e3f",
+      "t_ms": 3628
+    },
+    {
+      "name": "tz",
+      "value": 300,
+      "t_ms": 3628
+    },
+    {
+      "name": "ihdn",
+      "value": false,
+      "t_ms": 3628
+    },
+    {
+      "name": "xt1",
+      "value": true,
+      "t_ms": 3628
+    },
+    {
+      "name": "cdhf",
+      "value": true,
+      "t_ms": 3628
+    },
+    {
+      "name": "eva",
+      "value": 40,
+      "t_ms": 3628
+    },
+    {
+      "name": "cokys",
+      "value": ",loadTimes,csi,app",
+      "t_ms": 3629
+    },
+    {
+      "name": "ecpc",
+      "value": false,
+      "t_ms": 3629
+    },
+    {
+      "name": "wop",
+      "value": false,
+      "t_ms": 3629
+    },
+    {
+      "name": "pf",
+      "value": "Linux x86_64",
+      "t_ms": 3629
+    },
+    {
+      "name": "hc",
+      "value": 12,
+      "t_ms": 3629
+    },
+    {
+      "name": "br_oh",
+      "value": 1031,
+      "t_ms": 3629
+    },
+    {
+      "name": "br_ow",
+      "value": 1374,
+      "t_ms": 3629
+    },
+    {
+      "name": "ua",
+      "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+      "t_ms": 3629
+    },
+    {
+      "name": "wbd",
+      "value": false,
+      "t_ms": 3629
+    },
+    {
+      "name": "ts_mtp",
+      "value": 0,
+      "t_ms": 3629
+    },
+    {
+      "name": "mob",
+      "value": false,
+      "t_ms": 3629
+    },
+    {
+      "name": "lgs",
+      "value": "[\"en-US\"]",
+      "t_ms": 3629
+    },
+    {
+      "name": "dvm",
+      "value": 32,
+      "t_ms": 3629
+    },
+    {
+      "name": "ckwa",
+      "value": true,
+      "t_ms": 3629
+    },
+    {
+      "name": "aco",
+      "value": "probably",
+      "t_ms": 3629
+    },
+    {
+      "name": "acots",
+      "value": false,
+      "t_ms": 3629
+    },
+    {
+      "name": "acmp",
+      "value": "probably",
+      "t_ms": 3629
+    },
+    {
+      "name": "acmpts",
+      "value": true,
+      "t_ms": 3629
+    },
+    {
+      "name": "acmpu",
+      "value": "maybe",
+      "t_ms": 3629
+    },
+    {
+      "name": "acmputs",
+      "value": false,
+      "t_ms": 3629
+    },
+    {
+      "name": "acw",
+      "value": "probably",
+      "t_ms": 3629
+    },
+    {
+      "name": "acwts",
+      "value": false,
+      "t_ms": 3629
+    },
+    {
+      "name": "acma",
+      "value": "maybe",
+      "t_ms": 3629
+    },
+    {
+      "name": "acmats",
+      "value": false,
+      "t_ms": 3629
+    },
+    {
+      "name": "acaa",
+      "value": "probably",
+      "t_ms": 3629
+    },
+    {
+      "name": "acaats",
+      "value": true,
+      "t_ms": 3629
+    },
+    {
+      "name": "ac3",
+      "value": "",
+      "t_ms": 3629
+    },
+    {
+      "name": "ac3ts",
+      "value": false,
+      "t_ms": 3629
+    },
+    {
+      "name": "acf",
+      "value": "probably",
+      "t_ms": 3629
+    },
+    {
+      "name": "acfts",
+      "value": false,
+      "t_ms": 3629
+    },
+    {
+      "name": "acmp4",
+      "value": "maybe",
+      "t_ms": 3629
+    },
+    {
+      "name": "acmp4ts",
+      "value": false,
+      "t_ms": 3629
+    },
+    {
+      "name": "acmp3",
+      "value": "probably",
+      "t_ms": 3629
+    },
+    {
+      "name": "acmp3ts",
+      "value": false,
+      "t_ms": 3629
+    },
+    {
+      "name": "acwm",
+      "value": "maybe",
+      "t_ms": 3629
+    },
+    {
+      "name": "acwmts",
+      "value": false,
+      "t_ms": 3629
+    },
+    {
+      "name": "ocpt",
+      "value": false,
+      "t_ms": 3629
+    },
+    {
+      "name": "mq",
+      "value": "aptr:fine, ahvr:hover",
+      "t_ms": 3629
+    },
+    {
+      "name": "mq2",
+      "value": "cg:srgb, dr:standard, dm:browser",
+      "t_ms": 3629
+    },
+    {
+      "name": "awe",
+      "value": false,
+      "t_ms": 3629
+    },
+    {
+      "name": "phe",
+      "value": false,
+      "t_ms": 3629
+    },
+    {
+      "name": "dat",
+      "value": false,
+      "t_ms": 3629
+    },
+    {
+      "name": "nm",
+      "value": false,
+      "t_ms": 3629
+    },
+    {
+      "name": "geb",
+      "value": false,
+      "t_ms": 3629
+    },
+    {
+      "name": "sqt",
+      "value": false,
+      "t_ms": 3629
+    },
+    {
+      "name": "spwn",
+      "value": false,
+      "t_ms": 3629
+    },
+    {
+      "name": "emt",
+      "value": false,
+      "t_ms": 3629
+    },
+    {
+      "name": "nhi",
+      "value": "x86,64,false,,Linux,,148.0.7778.96,false",
+      "t_ms": 3630
+    },
+    {
+      "name": "stqe",
+      "value": 10737418240,
+      "t_ms": 3630
+    },
+    {
+      "name": "stqu",
+      "value": 0,
+      "t_ms": 3630
+    },
+    {
+      "name": "k_lyts",
+      "value": 48,
+      "t_ms": 3630
+    },
+    {
+      "name": "k_lytk",
+      "value": "kg20va`l<'w8mh.71pdfoqcn[zy365x/\\,-4bt9siu=j;r]e",
+      "t_ms": 3631
+    },
+    {
+      "name": "bci",
+      "value": true,
+      "t_ms": 3631
+    },
+    {
+      "name": "bcl",
+      "value": 1,
+      "t_ms": 3631
+    },
+    {
+      "name": "bct",
+      "value": 0,
+      "t_ms": 3631
+    },
+    {
+      "name": "bdt",
+      "value": null,
+      "t_ms": 3631
+    },
+    {
+      "name": "wwl",
+      "value": "lgs",
+      "t_ms": 3639
+    },
+    {
+      "name": "wwlrv",
+      "value": "WyJlbi1VUyIsImVuIl0=",
+      "t_ms": 3639
+    },
+    {
+      "name": "glvd",
+      "value": "Google Inc. (Google)",
+      "t_ms": 3639
+    },
+    {
+      "name": "glrd",
+      "value": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "t_ms": 3639
+    },
+    {
+      "name": "tzp",
+      "value": "America/Chicago",
+      "t_ms": 3639
+    },
+    {
+      "name": "isf",
+      "value": false,
+      "t_ms": 3639
+    },
+    {
+      "name": "isf2",
+      "value": false,
+      "t_ms": 3639
+    },
+    {
+      "name": "pw",
+      "value": false,
+      "t_ms": 3640
+    },
+    {
+      "name": "pcb",
+      "value": false,
+      "t_ms": 3640
+    },
+    {
+      "name": "arc",
+      "value": false,
+      "t_ms": 3640
+    },
+    {
+      "name": "fai",
+      "value": false,
+      "t_ms": 3640
+    },
+    {
+      "name": "gai",
+      "value": false,
+      "t_ms": 3640
+    },
+    {
+      "name": "bbs3",
+      "value": false,
+      "t_ms": 3640
+    },
+    {
+      "name": "dt",
+      "value": false,
+      "t_ms": 3640
+    },
+    {
+      "name": "fph",
+      "value": 1169674717,
+      "t_ms": 3641
+    },
+    {
+      "name": "sgb",
+      "value": "3639647177",
+      "t_ms": 3641
+    },
+    {
+      "name": "sgd",
+      "value": "1338100378",
+      "t_ms": 3641
+    },
+    {
+      "name": "sgc",
+      "value": "2614518304",
+      "t_ms": 3641
+    },
+    {
+      "name": "jset",
+      "value": 1779535461,
+      "t_ms": 3641
+    },
+    {
+      "name": "bpc",
+      "value": 1,
+      "t_ms": 3641
+    },
+    {
+      "name": "emd",
+      "value": "k:ai,vi,ao",
+      "t_ms": 3737
+    },
+    {
+      "name": "m_scw",
+      "value": 22,
+      "t_ms": 3865
+    },
+    {
+      "name": "m_sch",
+      "value": 106,
+      "t_ms": 3865
+    },
+    {
+      "name": "dcok",
+      "value": ".datadome.co",
+      "t_ms": 4291
+    },
+    {
+      "name": "nowd",
+      "t_ms": 4931
+    },
+    {
+      "name": "sfex",
+      "t_ms": 4931
+    }
+  ]
+}

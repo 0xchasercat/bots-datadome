@@ -1,0 +1,1029 @@
+{
+  "target": "https://datadome.co/blog/",
+  "capturedAt": "2026-05-23T10:54:46.045Z",
+  "bundleVersion": "5.6.6",
+  "chokepoint": {
+    "function": "v(n,t)",
+    "bundleFile": "tags.js (minified) / tags.beautified.js:2127",
+    "role": "per-signal writer — every e.t(name, value) call routes here before XOR-keystream + base64-like emit"
+  },
+  "encryption": {
+    "algorithm": "XOR with PRNG keystream (custom xorshift) + custom base64-like alphabet",
+    "keyDerivation": {
+      "seed1": "Date.now() >> 3 ^ 11027890091",
+      "seed2": "publishable-key (window.ddjskey) hashed via l(n)",
+      "prng": "xorshift13/17/5 (function a in tags.beautified.js:2089)"
+    },
+    "notes": "No crypto.subtle — pure JS stream cipher. jspl payload is decryptable client-side given ddjskey + timestamp, modulo timing jitter on the >>3 shift."
+  },
+  "signalCount": 202,
+  "signals": [
+    {
+      "name": "nddc",
+      "value": 1,
+      "t_ms": 1553
+    },
+    {
+      "name": "r3n",
+      "value": 33,
+      "t_ms": 1554
+    },
+    {
+      "name": "exp8",
+      "value": 0,
+      "t_ms": 1554
+    },
+    {
+      "name": "plu",
+      "value": "PDF Viewer,Chrome PDF Viewer,Chromium PDF Viewer,Microsoft Edge PDF Viewer,WebKit built-in PDF",
+      "t_ms": 1572
+    },
+    {
+      "name": "plgod",
+      "value": false,
+      "t_ms": 1575
+    },
+    {
+      "name": "plg",
+      "value": 5,
+      "t_ms": 1575
+    },
+    {
+      "name": "plgne",
+      "value": true,
+      "t_ms": 1575
+    },
+    {
+      "name": "plgre",
+      "value": true,
+      "t_ms": 1575
+    },
+    {
+      "name": "plgof",
+      "value": false,
+      "t_ms": 1575
+    },
+    {
+      "name": "plggt",
+      "value": false,
+      "t_ms": 1575
+    },
+    {
+      "name": "bfr",
+      "value": false,
+      "t_ms": 1575
+    },
+    {
+      "name": "hdn",
+      "value": false,
+      "t_ms": 1575
+    },
+    {
+      "name": "br_w",
+      "value": 1366,
+      "t_ms": 1576
+    },
+    {
+      "name": "br_h",
+      "value": 768,
+      "t_ms": 1576
+    },
+    {
+      "name": "br_iw",
+      "value": 1366,
+      "t_ms": 1576
+    },
+    {
+      "name": "br_ih",
+      "value": 768,
+      "t_ms": 1577
+    },
+    {
+      "name": "ars_w",
+      "value": 1366,
+      "t_ms": 1577
+    },
+    {
+      "name": "ars_h",
+      "value": 768,
+      "t_ms": 1577
+    },
+    {
+      "name": "rs_w",
+      "value": 1366,
+      "t_ms": 1577
+    },
+    {
+      "name": "rs_h",
+      "value": 768,
+      "t_ms": 1578
+    },
+    {
+      "name": "rs_cd",
+      "value": 24,
+      "t_ms": 1578
+    },
+    {
+      "name": "cg_w",
+      "value": 8,
+      "t_ms": 1578
+    },
+    {
+      "name": "cg_h",
+      "value": 131,
+      "t_ms": 1578
+    },
+    {
+      "name": "sg_w",
+      "value": -8,
+      "t_ms": 1579
+    },
+    {
+      "name": "sg_h",
+      "value": -131,
+      "t_ms": 1579
+    },
+    {
+      "name": "pr",
+      "value": 1,
+      "t_ms": 1579
+    },
+    {
+      "name": "so",
+      "value": "landscape-primary",
+      "t_ms": 1579
+    },
+    {
+      "name": "trrd",
+      "value": 0.817154937837316,
+      "t_ms": 1585
+    },
+    {
+      "name": "ucdv",
+      "value": false,
+      "t_ms": 1587
+    },
+    {
+      "name": "dp0",
+      "value": false,
+      "t_ms": 1590
+    },
+    {
+      "name": "hcovdr",
+      "value": false,
+      "t_ms": 1592
+    },
+    {
+      "name": "plovdr",
+      "value": false,
+      "t_ms": 1593
+    },
+    {
+      "name": "ftsovdr",
+      "value": false,
+      "t_ms": 1594
+    },
+    {
+      "name": "orf",
+      "value": "",
+      "t_ms": 1602
+    },
+    {
+      "name": "dffls",
+      "value": "Polymath,PolymathDisplay,KaTeX_AMS,KaTeX_Caligraphic,KaTeX_Fraktur,KaTeX_Main,KaTeX_Math,KaTeX_SansSerif,KaTeX_Script,KaTeX_Size1,KaTeX_Size2,KaTeX_Size3,KaTeX_Size4,KaTeX_Typewriter",
+      "t_ms": 1606
+    },
+    {
+      "name": "niet",
+      "value": "4g",
+      "t_ms": 1606
+    },
+    {
+      "name": "nid",
+      "value": 1.55,
+      "t_ms": 1607
+    },
+    {
+      "name": "nisd",
+      "value": false,
+      "t_ms": 1607
+    },
+    {
+      "name": "nt_tcp",
+      "value": 12,
+      "t_ms": 1607
+    },
+    {
+      "name": "nt_dns",
+      "value": 5,
+      "t_ms": 1608
+    },
+    {
+      "name": "nt_rd",
+      "value": 0,
+      "t_ms": 1608
+    },
+    {
+      "name": "nt_irt",
+      "value": -21.899999618530273,
+      "t_ms": 1608
+    },
+    {
+      "name": "nt_rt",
+      "value": 539.1999998092651,
+      "t_ms": 1608
+    },
+    {
+      "name": "nt_tls",
+      "value": 7.800000190734863,
+      "t_ms": 1609
+    },
+    {
+      "name": "nt_ttf",
+      "value": 636.8000001907349,
+      "t_ms": 1609
+    },
+    {
+      "name": "nt_swt",
+      "value": 0.6999998092651367,
+      "t_ms": 1609
+    },
+    {
+      "name": "nt_csd",
+      "value": 141979,
+      "t_ms": 1609
+    },
+    {
+      "name": "nt_nhp",
+      "value": "h2",
+      "t_ms": 1609
+    },
+    {
+      "name": "nt_rdc",
+      "value": 0,
+      "t_ms": 1610
+    },
+    {
+      "name": "nt_it",
+      "value": "navigation",
+      "t_ms": 1610
+    },
+    {
+      "name": "nt_prs",
+      "value": 0.10000038146972656,
+      "t_ms": 1610
+    },
+    {
+      "name": "nt_esc",
+      "value": 4.300000190734863,
+      "t_ms": 1610
+    },
+    {
+      "name": "nt_ttrd",
+      "value": -0.4415584029546565,
+      "t_ms": 1610
+    },
+    {
+      "name": "nt_le",
+      "value": 0,
+      "t_ms": 1611
+    },
+    {
+      "name": "nt_dcle",
+      "value": 0,
+      "t_ms": 1611
+    },
+    {
+      "name": "nt_di",
+      "value": 1286.6999998092651,
+      "t_ms": 1611
+    },
+    {
+      "name": "nt_dc",
+      "value": 0,
+      "t_ms": 1611
+    },
+    {
+      "name": "lg",
+      "value": "en-US",
+      "t_ms": 1618
+    },
+    {
+      "name": "isb",
+      "value": false,
+      "t_ms": 1618
+    },
+    {
+      "name": "idp",
+      "value": true,
+      "t_ms": 1619
+    },
+    {
+      "name": "crt",
+      "value": 100,
+      "t_ms": 1619
+    },
+    {
+      "name": "vnd",
+      "value": "Google Inc.",
+      "t_ms": 1619
+    },
+    {
+      "name": "bid",
+      "value": "NA",
+      "t_ms": 1619
+    },
+    {
+      "name": "med",
+      "value": "defined",
+      "t_ms": 1620
+    },
+    {
+      "name": "pltod",
+      "value": false,
+      "t_ms": 1620
+    },
+    {
+      "name": "wdifrm",
+      "value": false,
+      "t_ms": 1621
+    },
+    {
+      "name": "iwgl",
+      "t_ms": 1621
+    },
+    {
+      "name": "npmtm",
+      "value": false,
+      "t_ms": 1625
+    },
+    {
+      "name": "wdif",
+      "value": false,
+      "t_ms": 1625
+    },
+    {
+      "name": "ccsT",
+      "value": "Error\n    at y1 (https://js.datadome.co/tags.js:2:100793)\n    at i1.I (https://js.datadome.co/tags.js:2:78419)\n    at https://js.datadome.co/tags.js:2",
+      "t_ms": 1628
+    },
+    {
+      "name": "ccsB",
+      "value": "793)\n    at i1.I (https://js.datadome.co/tags.js:2:78419)\n    at https://js.datadome.co/tags.js:2:99290\n    at https://js.datadome.co/tags.js:2:106323",
+      "t_ms": 1629
+    },
+    {
+      "name": "ccsH",
+      "value": 745885538,
+      "t_ms": 1629
+    },
+    {
+      "name": "mmt",
+      "value": "application/pdf,text/pdf",
+      "t_ms": 1644
+    },
+    {
+      "name": "wdifpnh",
+      "value": "1872529569",
+      "t_ms": 1645
+    },
+    {
+      "name": "vco",
+      "value": "",
+      "t_ms": 1646
+    },
+    {
+      "name": "vcots",
+      "value": false,
+      "t_ms": 1646
+    },
+    {
+      "name": "vch",
+      "value": "probably",
+      "t_ms": 1646
+    },
+    {
+      "name": "vchts",
+      "value": true,
+      "t_ms": 1646
+    },
+    {
+      "name": "vcw",
+      "value": "probably",
+      "t_ms": 1647
+    },
+    {
+      "name": "vcwts",
+      "value": true,
+      "t_ms": 1647
+    },
+    {
+      "name": "vc3",
+      "value": "maybe",
+      "t_ms": 1647
+    },
+    {
+      "name": "vc3ts",
+      "value": false,
+      "t_ms": 1648
+    },
+    {
+      "name": "vcmp",
+      "value": "",
+      "t_ms": 1648
+    },
+    {
+      "name": "vcmpts",
+      "value": false,
+      "t_ms": 1648
+    },
+    {
+      "name": "vc1",
+      "value": "probably",
+      "t_ms": 1649
+    },
+    {
+      "name": "vc1ts",
+      "value": true,
+      "t_ms": 1649
+    },
+    {
+      "name": "vcmk",
+      "value": "maybe",
+      "t_ms": 1649
+    },
+    {
+      "name": "vcmkuts",
+      "value": false,
+      "t_ms": 1649
+    },
+    {
+      "name": "vcq",
+      "value": "",
+      "t_ms": 1650
+    },
+    {
+      "name": "vcqts",
+      "value": false,
+      "t_ms": 1650
+    },
+    {
+      "name": "cssS",
+      "value": "11.78,11.41,11.08,14.98,11.99,4.01,12.36,4.88,9.16",
+      "t_ms": 1657
+    },
+    {
+      "name": "css0",
+      "value": "54, 220, 190",
+      "t_ms": 1657
+    },
+    {
+      "name": "css1",
+      "value": "14.9449, 0.732034, -0.716556, 0.0579738, -0.127836, 6.24155, 3.71014, -0.300173, 0.577496, -10.2053, 1.6189, -0.130979, 7.13784, -126.137, 20.0096, -0.618898",
+      "t_ms": 1657
+    },
+    {
+      "name": "cssH",
+      "value": "0px",
+      "t_ms": 1657
+    },
+    {
+      "name": "csssp",
+      "value": "",
+      "t_ms": 1660
+    },
+    {
+      "name": "muev",
+      "value": false,
+      "t_ms": 1661
+    },
+    {
+      "name": "pro_t",
+      "value": true,
+      "t_ms": 1661
+    },
+    {
+      "name": "wglo",
+      "value": true,
+      "t_ms": 1661
+    },
+    {
+      "name": "prso",
+      "value": true,
+      "t_ms": 1661
+    },
+    {
+      "name": "wbst",
+      "value": true,
+      "t_ms": 1661
+    },
+    {
+      "name": "psn",
+      "value": true,
+      "t_ms": 1662
+    },
+    {
+      "name": "edp",
+      "value": true,
+      "t_ms": 1662
+    },
+    {
+      "name": "addt",
+      "value": true,
+      "t_ms": 1662
+    },
+    {
+      "name": "wsdc",
+      "value": true,
+      "t_ms": 1662
+    },
+    {
+      "name": "ccsr",
+      "value": true,
+      "t_ms": 1662
+    },
+    {
+      "name": "nuad",
+      "value": true,
+      "t_ms": 1662
+    },
+    {
+      "name": "bcda",
+      "value": false,
+      "t_ms": 1662
+    },
+    {
+      "name": "idn",
+      "value": true,
+      "t_ms": 1663
+    },
+    {
+      "name": "capi",
+      "value": false,
+      "t_ms": 1663
+    },
+    {
+      "name": "svde",
+      "value": false,
+      "t_ms": 1663
+    },
+    {
+      "name": "vpbq",
+      "value": true,
+      "t_ms": 1664
+    },
+    {
+      "name": "bchk",
+      "value": "3223aeb6721e0d0917e7928181193ac88dcd62fbd5cadfbe7a2b2b473ecf58ee70f018dbdb1a1832e8dc6528387b0745971dbcd82384261e9a4e3f",
+      "t_ms": 1766
+    },
+    {
+      "name": "tz",
+      "value": 300,
+      "t_ms": 1768
+    },
+    {
+      "name": "ihdn",
+      "value": false,
+      "t_ms": 1769
+    },
+    {
+      "name": "xt1",
+      "value": true,
+      "t_ms": 1769
+    },
+    {
+      "name": "cdhf",
+      "value": true,
+      "t_ms": 1769
+    },
+    {
+      "name": "eva",
+      "value": 40,
+      "t_ms": 1770
+    },
+    {
+      "name": "cokys",
+      "value": ",loadTimes,csi,app",
+      "t_ms": 1770
+    },
+    {
+      "name": "ecpc",
+      "value": false,
+      "t_ms": 1770
+    },
+    {
+      "name": "wop",
+      "value": false,
+      "t_ms": 1770
+    },
+    {
+      "name": "pf",
+      "value": "Linux x86_64",
+      "t_ms": 1770
+    },
+    {
+      "name": "hc",
+      "value": 12,
+      "t_ms": 1770
+    },
+    {
+      "name": "br_oh",
+      "value": 899,
+      "t_ms": 1770
+    },
+    {
+      "name": "br_ow",
+      "value": 1374,
+      "t_ms": 1771
+    },
+    {
+      "name": "ua",
+      "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+      "t_ms": 1771
+    },
+    {
+      "name": "wbd",
+      "value": false,
+      "t_ms": 1771
+    },
+    {
+      "name": "ts_mtp",
+      "value": 0,
+      "t_ms": 1771
+    },
+    {
+      "name": "mob",
+      "value": false,
+      "t_ms": 1771
+    },
+    {
+      "name": "lgs",
+      "value": "[\"en-US\",\"en\"]",
+      "t_ms": 1771
+    },
+    {
+      "name": "dvm",
+      "value": 32,
+      "t_ms": 1771
+    },
+    {
+      "name": "ckwa",
+      "value": true,
+      "t_ms": 1773
+    },
+    {
+      "name": "aco",
+      "value": "probably",
+      "t_ms": 1774
+    },
+    {
+      "name": "acots",
+      "value": false,
+      "t_ms": 1775
+    },
+    {
+      "name": "acmp",
+      "value": "probably",
+      "t_ms": 1775
+    },
+    {
+      "name": "acmpts",
+      "value": true,
+      "t_ms": 1775
+    },
+    {
+      "name": "acmpu",
+      "value": "maybe",
+      "t_ms": 1776
+    },
+    {
+      "name": "acmputs",
+      "value": false,
+      "t_ms": 1776
+    },
+    {
+      "name": "acw",
+      "value": "probably",
+      "t_ms": 1776
+    },
+    {
+      "name": "acwts",
+      "value": false,
+      "t_ms": 1776
+    },
+    {
+      "name": "acma",
+      "value": "maybe",
+      "t_ms": 1777
+    },
+    {
+      "name": "acmats",
+      "value": false,
+      "t_ms": 1777
+    },
+    {
+      "name": "acaa",
+      "value": "probably",
+      "t_ms": 1778
+    },
+    {
+      "name": "acaats",
+      "value": true,
+      "t_ms": 1778
+    },
+    {
+      "name": "ac3",
+      "value": "",
+      "t_ms": 1778
+    },
+    {
+      "name": "ac3ts",
+      "value": false,
+      "t_ms": 1778
+    },
+    {
+      "name": "acf",
+      "value": "probably",
+      "t_ms": 1779
+    },
+    {
+      "name": "acfts",
+      "value": false,
+      "t_ms": 1779
+    },
+    {
+      "name": "acmp4",
+      "value": "maybe",
+      "t_ms": 1780
+    },
+    {
+      "name": "acmp4ts",
+      "value": false,
+      "t_ms": 1780
+    },
+    {
+      "name": "acmp3",
+      "value": "probably",
+      "t_ms": 1781
+    },
+    {
+      "name": "acmp3ts",
+      "value": false,
+      "t_ms": 1781
+    },
+    {
+      "name": "acwm",
+      "value": "maybe",
+      "t_ms": 1782
+    },
+    {
+      "name": "acwmts",
+      "value": false,
+      "t_ms": 1782
+    },
+    {
+      "name": "ocpt",
+      "value": false,
+      "t_ms": 1782
+    },
+    {
+      "name": "mq",
+      "value": "aptr:fine, ahvr:hover",
+      "t_ms": 1783
+    },
+    {
+      "name": "mq2",
+      "value": "cg:srgb, dr:standard, dm:browser",
+      "t_ms": 1786
+    },
+    {
+      "name": "awe",
+      "value": false,
+      "t_ms": 1786
+    },
+    {
+      "name": "phe",
+      "value": false,
+      "t_ms": 1786
+    },
+    {
+      "name": "dat",
+      "value": false,
+      "t_ms": 1786
+    },
+    {
+      "name": "nm",
+      "value": false,
+      "t_ms": 1786
+    },
+    {
+      "name": "geb",
+      "value": false,
+      "t_ms": 1786
+    },
+    {
+      "name": "sqt",
+      "value": false,
+      "t_ms": 1787
+    },
+    {
+      "name": "spwn",
+      "value": false,
+      "t_ms": 1787
+    },
+    {
+      "name": "emt",
+      "value": false,
+      "t_ms": 1787
+    },
+    {
+      "name": "iccsH",
+      "value": 517338956,
+      "t_ms": 1831
+    },
+    {
+      "name": "iccsV",
+      "value": ",ab808b99c33cd27927d62c12a392b04cf657c159f2210b842b867ff64c6614ac",
+      "t_ms": 1840
+    },
+    {
+      "name": "cfpfe",
+      "value": "ZnVuY3Rpb24gX2thdGV4UmVuZGVyKHJvb3RFbGVtZW50KSB7CiAgY29uc3QgZWxlcyA9IHJvb3RFbGVtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoIi5rYXRleC1lcTpub3QoLmthdGV4LXJlbmRlcmVkKSIpOwogIGZvciAobGV0IGlkeCA9IDA7IGlkeCA8IGVsZXMubGVu",
+      "t_ms": 1854
+    },
+    {
+      "name": "stcfp",
+      "value": "L2thdGV4L2Fzc2V0cy9yZW5kZXIuanM/dmVyPTIuMi41OjE5OjMpCiAgICBhdCBIVE1MRG9jdW1lbnQuPGFub255bW91cz4gKGh0dHBzOi8vZGF0YWRvbWUuY28vd3AtY29udGVudC9wbHVnaW5zL2thdGV4L2Fzc2V0cy9yZW5kZXIuanM/dmVyPTIuMi41OjIzOjMp",
+      "t_ms": 1860
+    },
+    {
+      "name": "nhi",
+      "value": "x86,64,false,,Linux,,148.0.7778.96,false",
+      "t_ms": 1866
+    },
+    {
+      "name": "k_lyts",
+      "value": 48,
+      "t_ms": 1866
+    },
+    {
+      "name": "k_lytk",
+      "value": "kg20va`l<'w8mh.71pdfoqcn[zy365x/\\,-4bt9siu=j;r]e",
+      "t_ms": 1868
+    },
+    {
+      "name": "bci",
+      "value": true,
+      "t_ms": 1869
+    },
+    {
+      "name": "bcl",
+      "value": 1,
+      "t_ms": 1869
+    },
+    {
+      "name": "bct",
+      "value": 0,
+      "t_ms": 1869
+    },
+    {
+      "name": "bdt",
+      "value": null,
+      "t_ms": 1869
+    },
+    {
+      "name": "stqe",
+      "value": 10737418240,
+      "t_ms": 1870
+    },
+    {
+      "name": "stqu",
+      "value": 0,
+      "t_ms": 1870
+    },
+    {
+      "name": "m_scw",
+      "value": 22,
+      "t_ms": 2040
+    },
+    {
+      "name": "m_sch",
+      "value": 106,
+      "t_ms": 2040
+    },
+    {
+      "name": "wwl",
+      "value": false,
+      "t_ms": 2041
+    },
+    {
+      "name": "glvd",
+      "value": "Google Inc. (Google)",
+      "t_ms": 2042
+    },
+    {
+      "name": "glrd",
+      "value": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "t_ms": 2042
+    },
+    {
+      "name": "tzp",
+      "value": "America/Chicago",
+      "t_ms": 2043
+    },
+    {
+      "name": "emd",
+      "value": "k:ai,vi,ao",
+      "t_ms": 2051
+    },
+    {
+      "name": "isf",
+      "value": false,
+      "t_ms": 2053
+    },
+    {
+      "name": "isf2",
+      "value": false,
+      "t_ms": 2053
+    },
+    {
+      "name": "pw",
+      "value": false,
+      "t_ms": 2054
+    },
+    {
+      "name": "pcb",
+      "value": false,
+      "t_ms": 2055
+    },
+    {
+      "name": "arc",
+      "value": false,
+      "t_ms": 2056
+    },
+    {
+      "name": "fai",
+      "value": false,
+      "t_ms": 2056
+    },
+    {
+      "name": "gai",
+      "value": false,
+      "t_ms": 2056
+    },
+    {
+      "name": "bbs3",
+      "value": false,
+      "t_ms": 2056
+    },
+    {
+      "name": "dt",
+      "value": false,
+      "t_ms": 2058
+    },
+    {
+      "name": "fph",
+      "value": 1155326441,
+      "t_ms": 2061
+    },
+    {
+      "name": "sgb",
+      "value": "2602023547",
+      "t_ms": 2061
+    },
+    {
+      "name": "sgd",
+      "value": "1338098778",
+      "t_ms": 2061
+    },
+    {
+      "name": "sgc",
+      "value": "1250522144",
+      "t_ms": 2061
+    },
+    {
+      "name": "jset",
+      "value": 1779533671,
+      "t_ms": 2062
+    },
+    {
+      "name": "bpc",
+      "value": 1,
+      "t_ms": 2089
+    },
+    {
+      "name": "dcok",
+      "value": ".datadome.co",
+      "t_ms": 2207
+    },
+    {
+      "name": "nowd",
+      "t_ms": 2647
+    },
+    {
+      "name": "sfex",
+      "t_ms": 2647
+    }
+  ]
+}

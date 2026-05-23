@@ -1,0 +1,2501 @@
+{
+  "source_files": [
+    "examples/hard-blocked-plaintext.json",
+    "examples/clean-tmobile-plaintext.json"
+  ],
+  "total_captures": 2,
+  "unique_signal_count": 203,
+  "bucket_summary": {
+    "other": 134,
+    "viewport": 12,
+    "composite-device-id": 1,
+    "self-stack-integrity": 6,
+    "host-page-extract": 2,
+    "behavioral": 4,
+    "canvas-css-fingerprint": 6,
+    "ai-agent-detector": 2,
+    "page-session": 1,
+    "keyboard-dynamics": 2,
+    "language": 3,
+    "ua-client-hints": 1,
+    "network-timing": 19,
+    "stroke-generator-hash": 5,
+    "storage-quota": 2,
+    "timezone": 1,
+    "navigator": 1,
+    "iframe-parentNode": 1
+  },
+  "signals": [
+    {
+      "name": "ac3",
+      "capture_count": 2,
+      "example_value": "",
+      "value_type": "string",
+      "first_seen_t_ms": 1778,
+      "distinct_value_count": 1,
+      "sample_values": [
+        ""
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "ac3ts",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1778,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "acaa",
+      "capture_count": 2,
+      "example_value": "probably",
+      "value_type": "string",
+      "first_seen_t_ms": 1778,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "probably"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "acaats",
+      "capture_count": 2,
+      "example_value": true,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1778,
+      "distinct_value_count": 1,
+      "sample_values": [
+        true
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "acf",
+      "capture_count": 2,
+      "example_value": "probably",
+      "value_type": "string",
+      "first_seen_t_ms": 1779,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "probably"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "acfts",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1779,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "acma",
+      "capture_count": 2,
+      "example_value": "maybe",
+      "value_type": "string",
+      "first_seen_t_ms": 1777,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "maybe"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "acmats",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1777,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "acmp",
+      "capture_count": 2,
+      "example_value": "probably",
+      "value_type": "string",
+      "first_seen_t_ms": 1775,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "probably"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "acmp3",
+      "capture_count": 2,
+      "example_value": "probably",
+      "value_type": "string",
+      "first_seen_t_ms": 1781,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "probably"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "acmp3ts",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1781,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "acmp4",
+      "capture_count": 2,
+      "example_value": "maybe",
+      "value_type": "string",
+      "first_seen_t_ms": 1780,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "maybe"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "acmp4ts",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1780,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "acmpts",
+      "capture_count": 2,
+      "example_value": true,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1775,
+      "distinct_value_count": 1,
+      "sample_values": [
+        true
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "acmpu",
+      "capture_count": 2,
+      "example_value": "maybe",
+      "value_type": "string",
+      "first_seen_t_ms": 1776,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "maybe"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "acmputs",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1776,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "aco",
+      "capture_count": 2,
+      "example_value": "probably",
+      "value_type": "string",
+      "first_seen_t_ms": 1774,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "probably"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "acots",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1775,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "acw",
+      "capture_count": 2,
+      "example_value": "probably",
+      "value_type": "string",
+      "first_seen_t_ms": 1776,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "probably"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "acwm",
+      "capture_count": 2,
+      "example_value": "maybe",
+      "value_type": "string",
+      "first_seen_t_ms": 1782,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "maybe"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "acwmts",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1782,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "acwts",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1776,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "addt",
+      "capture_count": 2,
+      "example_value": true,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1662,
+      "distinct_value_count": 1,
+      "sample_values": [
+        true
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "arc",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 2056,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "ars_h",
+      "capture_count": 2,
+      "example_value": 768,
+      "value_type": "number",
+      "first_seen_t_ms": 1577,
+      "distinct_value_count": 2,
+      "sample_values": [
+        768,
+        900
+      ],
+      "bucket": "viewport"
+    },
+    {
+      "name": "ars_w",
+      "capture_count": 2,
+      "example_value": 1366,
+      "value_type": "number",
+      "first_seen_t_ms": 1577,
+      "distinct_value_count": 1,
+      "sample_values": [
+        1366
+      ],
+      "bucket": "viewport"
+    },
+    {
+      "name": "awe",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1786,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "bbs3",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 2056,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "bcda",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1662,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "bchk",
+      "capture_count": 2,
+      "example_value": "3223aeb6721e0d0917e7928181193ac88dcd62fbd5cadfbe7a2b2b473ecf58ee70f018dbdb1a1832e8dc6528387b0745971dbcd82384261e9a4e3f",
+      "value_type": "string",
+      "first_seen_t_ms": 1766,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "3223aeb6721e0d0917e7928181193ac88dcd62fbd5cadfbe7a2b2b473ecf58ee70f018dbdb1a1832…"
+      ],
+      "bucket": "composite-device-id"
+    },
+    {
+      "name": "bci",
+      "capture_count": 2,
+      "example_value": true,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1869,
+      "distinct_value_count": 1,
+      "sample_values": [
+        true
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "bcl",
+      "capture_count": 2,
+      "example_value": 1,
+      "value_type": "number",
+      "first_seen_t_ms": 1869,
+      "distinct_value_count": 1,
+      "sample_values": [
+        1
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "bct",
+      "capture_count": 2,
+      "example_value": 0,
+      "value_type": "number",
+      "first_seen_t_ms": 1869,
+      "distinct_value_count": 1,
+      "sample_values": [
+        0
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "bdt",
+      "capture_count": 2,
+      "example_value": null,
+      "value_type": "object",
+      "first_seen_t_ms": 1869,
+      "distinct_value_count": 1,
+      "sample_values": [
+        null
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "bfr",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1575,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "bid",
+      "capture_count": 2,
+      "example_value": "NA",
+      "value_type": "string",
+      "first_seen_t_ms": 1619,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "NA"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "bpc",
+      "capture_count": 2,
+      "example_value": 1,
+      "value_type": "number",
+      "first_seen_t_ms": 2089,
+      "distinct_value_count": 1,
+      "sample_values": [
+        1
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "br_h",
+      "capture_count": 2,
+      "example_value": 768,
+      "value_type": "number",
+      "first_seen_t_ms": 1576,
+      "distinct_value_count": 2,
+      "sample_values": [
+        768,
+        900
+      ],
+      "bucket": "viewport"
+    },
+    {
+      "name": "br_ih",
+      "capture_count": 2,
+      "example_value": 768,
+      "value_type": "number",
+      "first_seen_t_ms": 1577,
+      "distinct_value_count": 2,
+      "sample_values": [
+        768,
+        900
+      ],
+      "bucket": "viewport"
+    },
+    {
+      "name": "br_iw",
+      "capture_count": 2,
+      "example_value": 1366,
+      "value_type": "number",
+      "first_seen_t_ms": 1576,
+      "distinct_value_count": 1,
+      "sample_values": [
+        1366
+      ],
+      "bucket": "viewport"
+    },
+    {
+      "name": "br_oh",
+      "capture_count": 2,
+      "example_value": 899,
+      "value_type": "number",
+      "first_seen_t_ms": 1770,
+      "distinct_value_count": 2,
+      "sample_values": [
+        899,
+        1031
+      ],
+      "bucket": "viewport"
+    },
+    {
+      "name": "br_ow",
+      "capture_count": 2,
+      "example_value": 1374,
+      "value_type": "number",
+      "first_seen_t_ms": 1771,
+      "distinct_value_count": 1,
+      "sample_values": [
+        1374
+      ],
+      "bucket": "viewport"
+    },
+    {
+      "name": "br_w",
+      "capture_count": 2,
+      "example_value": 1366,
+      "value_type": "number",
+      "first_seen_t_ms": 1576,
+      "distinct_value_count": 1,
+      "sample_values": [
+        1366
+      ],
+      "bucket": "viewport"
+    },
+    {
+      "name": "capi",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1663,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "ccsB",
+      "capture_count": 2,
+      "example_value": "793)\n    at i1.I (https://js.datadome.co/tags.js:2:78419)\n    at https://js.datadome.co/tags.js:2:99290\n    at https://js.datadome.co/tags.js:2:106323",
+      "value_type": "string",
+      "first_seen_t_ms": 1629,
+      "distinct_value_count": 2,
+      "sample_values": [
+        "793)\n    at i1.I (https://js.datadome.co/tags.js:2:78419)\n    at https://js.data…",
+        "ags.js:2:100776)\nat i1.I (https://js.datadome.co/tags.js:2:78419)\nat https://js.…"
+      ],
+      "bucket": "self-stack-integrity"
+    },
+    {
+      "name": "ccsH",
+      "capture_count": 2,
+      "example_value": 745885538,
+      "value_type": "number",
+      "first_seen_t_ms": 1629,
+      "distinct_value_count": 2,
+      "sample_values": [
+        745885538,
+        779326173
+      ],
+      "bucket": "self-stack-integrity"
+    },
+    {
+      "name": "ccsr",
+      "capture_count": 2,
+      "example_value": true,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1662,
+      "distinct_value_count": 1,
+      "sample_values": [
+        true
+      ],
+      "bucket": "self-stack-integrity"
+    },
+    {
+      "name": "ccsT",
+      "capture_count": 2,
+      "example_value": "Error\n    at y1 (https://js.datadome.co/tags.js:2:100793)\n    at i1.I (https://js.datadome.co/tags.js:2:78419)\n    at https://js.datadome.co/tags.js:2",
+      "value_type": "string",
+      "first_seen_t_ms": 1628,
+      "distinct_value_count": 2,
+      "sample_values": [
+        "Error\n    at y1 (https://js.datadome.co/tags.js:2:100793)\n    at i1.I (https://j…",
+        "Error\nat y1 (https://js.datadome.co/tags.js:2:100776)\nat i1.I (https://js.datado…"
+      ],
+      "bucket": "self-stack-integrity"
+    },
+    {
+      "name": "cdhf",
+      "capture_count": 2,
+      "example_value": true,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1769,
+      "distinct_value_count": 1,
+      "sample_values": [
+        true
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "cfpfe",
+      "capture_count": 1,
+      "example_value": "ZnVuY3Rpb24gX2thdGV4UmVuZGVyKHJvb3RFbGVtZW50KSB7CiAgY29uc3QgZWxlcyA9IHJvb3RFbGVtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoIi5rYXRleC1lcTpub3QoLmthdGV4LXJlbmRlcmVkKSIpOwogIGZvciAobGV0IGlkeCA9IDA7IGlkeCA8IGVsZXMubGVu",
+      "value_type": "string",
+      "first_seen_t_ms": 1854,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "ZnVuY3Rpb24gX2thdGV4UmVuZGVyKHJvb3RFbGVtZW50KSB7CiAgY29uc3QgZWxlcyA9IHJvb3RFbGVt…"
+      ],
+      "bucket": "host-page-extract"
+    },
+    {
+      "name": "cg_h",
+      "capture_count": 2,
+      "example_value": 131,
+      "value_type": "number",
+      "first_seen_t_ms": 1578,
+      "distinct_value_count": 1,
+      "sample_values": [
+        131
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "cg_w",
+      "capture_count": 2,
+      "example_value": 8,
+      "value_type": "number",
+      "first_seen_t_ms": 1578,
+      "distinct_value_count": 1,
+      "sample_values": [
+        8
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "ckwa",
+      "capture_count": 2,
+      "example_value": true,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1773,
+      "distinct_value_count": 1,
+      "sample_values": [
+        true
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "cokys",
+      "capture_count": 2,
+      "example_value": ",loadTimes,csi,app",
+      "value_type": "string",
+      "first_seen_t_ms": 1770,
+      "distinct_value_count": 1,
+      "sample_values": [
+        ",loadTimes,csi,app"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "crt",
+      "capture_count": 2,
+      "example_value": 100,
+      "value_type": "number",
+      "first_seen_t_ms": 1619,
+      "distinct_value_count": 2,
+      "sample_values": [
+        100,
+        250
+      ],
+      "bucket": "behavioral"
+    },
+    {
+      "name": "css0",
+      "capture_count": 2,
+      "example_value": "54, 220, 190",
+      "value_type": "string",
+      "first_seen_t_ms": 1657,
+      "distinct_value_count": 2,
+      "sample_values": [
+        "54, 220, 190",
+        "20, 61, 2"
+      ],
+      "bucket": "canvas-css-fingerprint"
+    },
+    {
+      "name": "css1",
+      "capture_count": 2,
+      "example_value": "14.9449, 0.732034, -0.716556, 0.0579738, -0.127836, 6.24155, 3.71014, -0.300173, 0.577496, -10.2053, 1.6189, -0.130979, 7.13784, -126.137, 20.0096, -0.618898",
+      "value_type": "string",
+      "first_seen_t_ms": 1657,
+      "distinct_value_count": 2,
+      "sample_values": [
+        "14.9449, 0.732034, -0.716556, 0.0579738, -0.127836, 6.24155, 3.71014, -0.300173,…",
+        "11.9699, 2.24687, -0.161146, 0.0178654, 0.708851, -3.57056, 2.86879, -0.318047, …"
+      ],
+      "bucket": "canvas-css-fingerprint"
+    },
+    {
+      "name": "cssH",
+      "capture_count": 2,
+      "example_value": "0px",
+      "value_type": "string",
+      "first_seen_t_ms": 1657,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "0px"
+      ],
+      "bucket": "canvas-css-fingerprint"
+    },
+    {
+      "name": "cssS",
+      "capture_count": 2,
+      "example_value": "11.78,11.41,11.08,14.98,11.99,4.01,12.36,4.88,9.16",
+      "value_type": "string",
+      "first_seen_t_ms": 1657,
+      "distinct_value_count": 2,
+      "sample_values": [
+        "11.78,11.41,11.08,14.98,11.99,4.01,12.36,4.88,9.16",
+        "1.69,0.99,11.60,12.18,4.88,4.34,9.02,10.77,12.38"
+      ],
+      "bucket": "canvas-css-fingerprint"
+    },
+    {
+      "name": "csssp",
+      "capture_count": 2,
+      "example_value": "",
+      "value_type": "string",
+      "first_seen_t_ms": 1660,
+      "distinct_value_count": 1,
+      "sample_values": [
+        ""
+      ],
+      "bucket": "canvas-css-fingerprint"
+    },
+    {
+      "name": "dat",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1786,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "dcok",
+      "capture_count": 2,
+      "example_value": ".datadome.co",
+      "value_type": "string",
+      "first_seen_t_ms": 2207,
+      "distinct_value_count": 1,
+      "sample_values": [
+        ".datadome.co"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "dffls",
+      "capture_count": 2,
+      "example_value": "Polymath,PolymathDisplay,KaTeX_AMS,KaTeX_Caligraphic,KaTeX_Fraktur,KaTeX_Main,KaTeX_Math,KaTeX_SansSerif,KaTeX_Script,KaTeX_Size1,KaTeX_Size2,KaTeX_Size3,KaTeX_Size4,KaTeX_Typewriter",
+      "value_type": "string",
+      "first_seen_t_ms": 1606,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "Polymath,PolymathDisplay,KaTeX_AMS,KaTeX_Caligraphic,KaTeX_Fraktur,KaTeX_Main,Ka…"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "dp0",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1590,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "dt",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 2058,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "dvm",
+      "capture_count": 2,
+      "example_value": 32,
+      "value_type": "number",
+      "first_seen_t_ms": 1771,
+      "distinct_value_count": 1,
+      "sample_values": [
+        32
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "ecpc",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1770,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "edp",
+      "capture_count": 2,
+      "example_value": true,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1662,
+      "distinct_value_count": 1,
+      "sample_values": [
+        true
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "emd",
+      "capture_count": 2,
+      "example_value": "k:ai,vi,ao",
+      "value_type": "string",
+      "first_seen_t_ms": 2051,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "k:ai,vi,ao"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "emt",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1787,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "eva",
+      "capture_count": 2,
+      "example_value": 40,
+      "value_type": "number",
+      "first_seen_t_ms": 1770,
+      "distinct_value_count": 1,
+      "sample_values": [
+        40
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "exp8",
+      "capture_count": 2,
+      "example_value": 0,
+      "value_type": "number",
+      "first_seen_t_ms": 1554,
+      "distinct_value_count": 1,
+      "sample_values": [
+        0
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "fai",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 2056,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "fph",
+      "capture_count": 2,
+      "example_value": 1155326441,
+      "value_type": "number",
+      "first_seen_t_ms": 2061,
+      "distinct_value_count": 2,
+      "sample_values": [
+        1155326441,
+        1169674717
+      ],
+      "bucket": "canvas-css-fingerprint"
+    },
+    {
+      "name": "ftsovdr",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1594,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "gai",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 2056,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "ai-agent-detector"
+    },
+    {
+      "name": "geb",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1786,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "glrd",
+      "capture_count": 2,
+      "example_value": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "value_type": "string",
+      "first_seen_t_ms": 2042,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftSh…"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "glvd",
+      "capture_count": 2,
+      "example_value": "Google Inc. (Google)",
+      "value_type": "string",
+      "first_seen_t_ms": 2042,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "Google Inc. (Google)"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "hc",
+      "capture_count": 2,
+      "example_value": 12,
+      "value_type": "number",
+      "first_seen_t_ms": 1770,
+      "distinct_value_count": 1,
+      "sample_values": [
+        12
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "hcovdr",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1592,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "hdn",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1575,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "iccsH",
+      "capture_count": 2,
+      "example_value": 517338956,
+      "value_type": "number",
+      "first_seen_t_ms": 1831,
+      "distinct_value_count": 2,
+      "sample_values": [
+        517338956,
+        2598265597
+      ],
+      "bucket": "self-stack-integrity"
+    },
+    {
+      "name": "iccsV",
+      "capture_count": 2,
+      "example_value": ",ab808b99c33cd27927d62c12a392b04cf657c159f2210b842b867ff64c6614ac",
+      "value_type": "string",
+      "first_seen_t_ms": 1840,
+      "distinct_value_count": 2,
+      "sample_values": [
+        ",ab808b99c33cd27927d62c12a392b04cf657c159f2210b842b867ff64c6614ac",
+        ",fb9c3495d5a7cdc9fda5644f3463d54c075b15b854fa06492034d589a3794e50,,fb9c3495d5a7c…"
+      ],
+      "bucket": "self-stack-integrity"
+    },
+    {
+      "name": "idn",
+      "capture_count": 2,
+      "example_value": true,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1663,
+      "distinct_value_count": 1,
+      "sample_values": [
+        true
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "idp",
+      "capture_count": 2,
+      "example_value": true,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1619,
+      "distinct_value_count": 1,
+      "sample_values": [
+        true
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "ihdn",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1769,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "isb",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1618,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "isf",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 2053,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "isf2",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 2053,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "iwgl",
+      "capture_count": 2,
+      "value_type": "undefined",
+      "first_seen_t_ms": 1621,
+      "distinct_value_count": 1,
+      "sample_values": [
+        null
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "jset",
+      "capture_count": 2,
+      "example_value": 1779533671,
+      "value_type": "number",
+      "first_seen_t_ms": 2062,
+      "distinct_value_count": 2,
+      "sample_values": [
+        1779533671,
+        1779535461
+      ],
+      "bucket": "page-session"
+    },
+    {
+      "name": "k_lytk",
+      "capture_count": 2,
+      "example_value": "kg20va`l<'w8mh.71pdfoqcn[zy365x/\\,-4bt9siu=j;r]e",
+      "value_type": "string",
+      "first_seen_t_ms": 1868,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "kg20va`l<'w8mh.71pdfoqcn[zy365x/\\,-4bt9siu=j;r]e"
+      ],
+      "bucket": "keyboard-dynamics"
+    },
+    {
+      "name": "k_lyts",
+      "capture_count": 2,
+      "example_value": 48,
+      "value_type": "number",
+      "first_seen_t_ms": 1866,
+      "distinct_value_count": 1,
+      "sample_values": [
+        48
+      ],
+      "bucket": "keyboard-dynamics"
+    },
+    {
+      "name": "lg",
+      "capture_count": 2,
+      "example_value": "en-US",
+      "value_type": "string",
+      "first_seen_t_ms": 1618,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "en-US"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "lgs",
+      "capture_count": 2,
+      "example_value": "[\"en-US\",\"en\"]",
+      "value_type": "string",
+      "first_seen_t_ms": 1771,
+      "distinct_value_count": 2,
+      "sample_values": [
+        "[\"en-US\",\"en\"]",
+        "[\"en-US\"]"
+      ],
+      "bucket": "language"
+    },
+    {
+      "name": "m_sch",
+      "capture_count": 2,
+      "example_value": 106,
+      "value_type": "number",
+      "first_seen_t_ms": 2040,
+      "distinct_value_count": 1,
+      "sample_values": [
+        106
+      ],
+      "bucket": "behavioral"
+    },
+    {
+      "name": "m_scw",
+      "capture_count": 2,
+      "example_value": 22,
+      "value_type": "number",
+      "first_seen_t_ms": 2040,
+      "distinct_value_count": 1,
+      "sample_values": [
+        22
+      ],
+      "bucket": "behavioral"
+    },
+    {
+      "name": "med",
+      "capture_count": 2,
+      "example_value": "defined",
+      "value_type": "string",
+      "first_seen_t_ms": 1620,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "defined"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "mmt",
+      "capture_count": 2,
+      "example_value": "application/pdf,text/pdf",
+      "value_type": "string",
+      "first_seen_t_ms": 1644,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "application/pdf,text/pdf"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "mob",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1771,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "mq",
+      "capture_count": 2,
+      "example_value": "aptr:fine, ahvr:hover",
+      "value_type": "string",
+      "first_seen_t_ms": 1783,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "aptr:fine, ahvr:hover"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "mq2",
+      "capture_count": 2,
+      "example_value": "cg:srgb, dr:standard, dm:browser",
+      "value_type": "string",
+      "first_seen_t_ms": 1786,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "cg:srgb, dr:standard, dm:browser"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "muev",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1661,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "nddc",
+      "capture_count": 2,
+      "example_value": 1,
+      "value_type": "number",
+      "first_seen_t_ms": 1553,
+      "distinct_value_count": 1,
+      "sample_values": [
+        1
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "nhi",
+      "capture_count": 2,
+      "example_value": "x86,64,false,,Linux,,148.0.7778.96,false",
+      "value_type": "string",
+      "first_seen_t_ms": 1866,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "x86,64,false,,Linux,,148.0.7778.96,false"
+      ],
+      "bucket": "ua-client-hints"
+    },
+    {
+      "name": "nid",
+      "capture_count": 2,
+      "example_value": 1.55,
+      "value_type": "number",
+      "first_seen_t_ms": 1607,
+      "distinct_value_count": 2,
+      "sample_values": [
+        1.55,
+        10
+      ],
+      "bucket": "behavioral"
+    },
+    {
+      "name": "niet",
+      "capture_count": 2,
+      "example_value": "4g",
+      "value_type": "string",
+      "first_seen_t_ms": 1606,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "4g"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "nisd",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1607,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "nm",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1786,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "nowd",
+      "capture_count": 2,
+      "value_type": "undefined",
+      "first_seen_t_ms": 2647,
+      "distinct_value_count": 1,
+      "sample_values": [
+        null
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "npmtm",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1625,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "nt_csd",
+      "capture_count": 2,
+      "example_value": 141979,
+      "value_type": "number",
+      "first_seen_t_ms": 1609,
+      "distinct_value_count": 2,
+      "sample_values": [
+        141979,
+        144517
+      ],
+      "bucket": "network-timing"
+    },
+    {
+      "name": "nt_dc",
+      "capture_count": 2,
+      "example_value": 0,
+      "value_type": "number",
+      "first_seen_t_ms": 1611,
+      "distinct_value_count": 1,
+      "sample_values": [
+        0
+      ],
+      "bucket": "network-timing"
+    },
+    {
+      "name": "nt_dcle",
+      "capture_count": 2,
+      "example_value": 0,
+      "value_type": "number",
+      "first_seen_t_ms": 1611,
+      "distinct_value_count": 2,
+      "sample_values": [
+        0,
+        0.5
+      ],
+      "bucket": "network-timing"
+    },
+    {
+      "name": "nt_di",
+      "capture_count": 2,
+      "example_value": 1286.6999998092651,
+      "value_type": "number",
+      "first_seen_t_ms": 1611,
+      "distinct_value_count": 2,
+      "sample_values": [
+        1286.6999998092651,
+        2833.5999994277954
+      ],
+      "bucket": "network-timing"
+    },
+    {
+      "name": "nt_dns",
+      "capture_count": 2,
+      "example_value": 5,
+      "value_type": "number",
+      "first_seen_t_ms": 1608,
+      "distinct_value_count": 2,
+      "sample_values": [
+        5,
+        0
+      ],
+      "bucket": "network-timing"
+    },
+    {
+      "name": "nt_esc",
+      "capture_count": 2,
+      "example_value": 4.300000190734863,
+      "value_type": "number",
+      "first_seen_t_ms": 1610,
+      "distinct_value_count": 2,
+      "sample_values": [
+        4.300000190734863,
+        0
+      ],
+      "bucket": "network-timing"
+    },
+    {
+      "name": "nt_irt",
+      "capture_count": 2,
+      "example_value": -21.899999618530273,
+      "value_type": "number",
+      "first_seen_t_ms": 1608,
+      "distinct_value_count": 2,
+      "sample_values": [
+        -21.899999618530273,
+        -3.59999942779541
+      ],
+      "bucket": "network-timing"
+    },
+    {
+      "name": "nt_it",
+      "capture_count": 2,
+      "example_value": "navigation",
+      "value_type": "string",
+      "first_seen_t_ms": 1610,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "navigation"
+      ],
+      "bucket": "network-timing"
+    },
+    {
+      "name": "nt_le",
+      "capture_count": 2,
+      "example_value": 0,
+      "value_type": "number",
+      "first_seen_t_ms": 1611,
+      "distinct_value_count": 1,
+      "sample_values": [
+        0
+      ],
+      "bucket": "network-timing"
+    },
+    {
+      "name": "nt_nhp",
+      "capture_count": 2,
+      "example_value": "h2",
+      "value_type": "string",
+      "first_seen_t_ms": 1609,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "h2"
+      ],
+      "bucket": "network-timing"
+    },
+    {
+      "name": "nt_prs",
+      "capture_count": 2,
+      "example_value": 0.10000038146972656,
+      "value_type": "number",
+      "first_seen_t_ms": 1610,
+      "distinct_value_count": 2,
+      "sample_values": [
+        0.10000038146972656,
+        2.6999998092651367
+      ],
+      "bucket": "network-timing"
+    },
+    {
+      "name": "nt_rd",
+      "capture_count": 2,
+      "example_value": 0,
+      "value_type": "number",
+      "first_seen_t_ms": 1608,
+      "distinct_value_count": 1,
+      "sample_values": [
+        0
+      ],
+      "bucket": "network-timing"
+    },
+    {
+      "name": "nt_rdc",
+      "capture_count": 2,
+      "example_value": 0,
+      "value_type": "number",
+      "first_seen_t_ms": 1610,
+      "distinct_value_count": 1,
+      "sample_values": [
+        0
+      ],
+      "bucket": "network-timing"
+    },
+    {
+      "name": "nt_rt",
+      "capture_count": 2,
+      "example_value": 539.1999998092651,
+      "value_type": "number",
+      "first_seen_t_ms": 1608,
+      "distinct_value_count": 2,
+      "sample_values": [
+        539.1999998092651,
+        1156.2000007629395
+      ],
+      "bucket": "network-timing"
+    },
+    {
+      "name": "nt_swt",
+      "capture_count": 2,
+      "example_value": 0.6999998092651367,
+      "value_type": "number",
+      "first_seen_t_ms": 1609,
+      "distinct_value_count": 2,
+      "sample_values": [
+        0.6999998092651367,
+        0.8999996185302734
+      ],
+      "bucket": "network-timing"
+    },
+    {
+      "name": "nt_tcp",
+      "capture_count": 2,
+      "example_value": 12,
+      "value_type": "number",
+      "first_seen_t_ms": 1607,
+      "distinct_value_count": 2,
+      "sample_values": [
+        12,
+        0
+      ],
+      "bucket": "network-timing"
+    },
+    {
+      "name": "nt_tls",
+      "capture_count": 2,
+      "example_value": 7.800000190734863,
+      "value_type": "number",
+      "first_seen_t_ms": 1609,
+      "distinct_value_count": 2,
+      "sample_values": [
+        7.800000190734863,
+        2.6999998092651367
+      ],
+      "bucket": "network-timing"
+    },
+    {
+      "name": "nt_ttf",
+      "capture_count": 2,
+      "example_value": 636.8000001907349,
+      "value_type": "number",
+      "first_seen_t_ms": 1609,
+      "distinct_value_count": 2,
+      "sample_values": [
+        636.8000001907349,
+        1284.1000003814697
+      ],
+      "bucket": "network-timing"
+    },
+    {
+      "name": "nt_ttrd",
+      "capture_count": 2,
+      "example_value": -0.4415584029546565,
+      "value_type": "number",
+      "first_seen_t_ms": 1610,
+      "distinct_value_count": 2,
+      "sample_values": [
+        -0.4415584029546565,
+        null
+      ],
+      "bucket": "network-timing"
+    },
+    {
+      "name": "nuad",
+      "capture_count": 2,
+      "example_value": true,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1662,
+      "distinct_value_count": 1,
+      "sample_values": [
+        true
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "ocpt",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1782,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "orf",
+      "capture_count": 2,
+      "example_value": "",
+      "value_type": "string",
+      "first_seen_t_ms": 1602,
+      "distinct_value_count": 1,
+      "sample_values": [
+        ""
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "pcb",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 2055,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "pf",
+      "capture_count": 2,
+      "example_value": "Linux x86_64",
+      "value_type": "string",
+      "first_seen_t_ms": 1770,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "Linux x86_64"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "phe",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1786,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "plg",
+      "capture_count": 2,
+      "example_value": 5,
+      "value_type": "number",
+      "first_seen_t_ms": 1575,
+      "distinct_value_count": 1,
+      "sample_values": [
+        5
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "plggt",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1575,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "plgne",
+      "capture_count": 2,
+      "example_value": true,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1575,
+      "distinct_value_count": 1,
+      "sample_values": [
+        true
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "plgod",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1575,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "plgof",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1575,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "plgre",
+      "capture_count": 2,
+      "example_value": true,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1575,
+      "distinct_value_count": 1,
+      "sample_values": [
+        true
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "plovdr",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1593,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "pltod",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1620,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "plu",
+      "capture_count": 2,
+      "example_value": "PDF Viewer,Chrome PDF Viewer,Chromium PDF Viewer,Microsoft Edge PDF Viewer,WebKit built-in PDF",
+      "value_type": "string",
+      "first_seen_t_ms": 1572,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "PDF Viewer,Chrome PDF Viewer,Chromium PDF Viewer,Microsoft Edge PDF Viewer,WebKi…"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "pr",
+      "capture_count": 2,
+      "example_value": 1,
+      "value_type": "number",
+      "first_seen_t_ms": 1579,
+      "distinct_value_count": 1,
+      "sample_values": [
+        1
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "pro_t",
+      "capture_count": 2,
+      "example_value": true,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1661,
+      "distinct_value_count": 1,
+      "sample_values": [
+        true
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "prso",
+      "capture_count": 2,
+      "example_value": true,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1661,
+      "distinct_value_count": 1,
+      "sample_values": [
+        true
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "psn",
+      "capture_count": 2,
+      "example_value": true,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1662,
+      "distinct_value_count": 1,
+      "sample_values": [
+        true
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "pw",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 2054,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "r3n",
+      "capture_count": 2,
+      "example_value": 33,
+      "value_type": "number",
+      "first_seen_t_ms": 1554,
+      "distinct_value_count": 1,
+      "sample_values": [
+        33
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "rs_cd",
+      "capture_count": 2,
+      "example_value": 24,
+      "value_type": "number",
+      "first_seen_t_ms": 1578,
+      "distinct_value_count": 1,
+      "sample_values": [
+        24
+      ],
+      "bucket": "viewport"
+    },
+    {
+      "name": "rs_h",
+      "capture_count": 2,
+      "example_value": 768,
+      "value_type": "number",
+      "first_seen_t_ms": 1578,
+      "distinct_value_count": 2,
+      "sample_values": [
+        768,
+        900
+      ],
+      "bucket": "viewport"
+    },
+    {
+      "name": "rs_w",
+      "capture_count": 2,
+      "example_value": 1366,
+      "value_type": "number",
+      "first_seen_t_ms": 1577,
+      "distinct_value_count": 1,
+      "sample_values": [
+        1366
+      ],
+      "bucket": "viewport"
+    },
+    {
+      "name": "sfex",
+      "capture_count": 2,
+      "value_type": "undefined",
+      "first_seen_t_ms": 2647,
+      "distinct_value_count": 1,
+      "sample_values": [
+        null
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "sg_h",
+      "capture_count": 2,
+      "example_value": -131,
+      "value_type": "number",
+      "first_seen_t_ms": 1579,
+      "distinct_value_count": 1,
+      "sample_values": [
+        -131
+      ],
+      "bucket": "stroke-generator-hash"
+    },
+    {
+      "name": "sg_w",
+      "capture_count": 2,
+      "example_value": -8,
+      "value_type": "number",
+      "first_seen_t_ms": 1579,
+      "distinct_value_count": 1,
+      "sample_values": [
+        -8
+      ],
+      "bucket": "stroke-generator-hash"
+    },
+    {
+      "name": "sgb",
+      "capture_count": 2,
+      "example_value": "2602023547",
+      "value_type": "string",
+      "first_seen_t_ms": 2061,
+      "distinct_value_count": 2,
+      "sample_values": [
+        "2602023547",
+        "3639647177"
+      ],
+      "bucket": "stroke-generator-hash"
+    },
+    {
+      "name": "sgc",
+      "capture_count": 2,
+      "example_value": "1250522144",
+      "value_type": "string",
+      "first_seen_t_ms": 2061,
+      "distinct_value_count": 2,
+      "sample_values": [
+        "1250522144",
+        "2614518304"
+      ],
+      "bucket": "stroke-generator-hash"
+    },
+    {
+      "name": "sgd",
+      "capture_count": 2,
+      "example_value": "1338098778",
+      "value_type": "string",
+      "first_seen_t_ms": 2061,
+      "distinct_value_count": 2,
+      "sample_values": [
+        "1338098778",
+        "1338100378"
+      ],
+      "bucket": "stroke-generator-hash"
+    },
+    {
+      "name": "so",
+      "capture_count": 2,
+      "example_value": "landscape-primary",
+      "value_type": "string",
+      "first_seen_t_ms": 1579,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "landscape-primary"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "spwn",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1787,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "sqt",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1787,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "ai-agent-detector"
+    },
+    {
+      "name": "stcfp",
+      "capture_count": 1,
+      "example_value": "L2thdGV4L2Fzc2V0cy9yZW5kZXIuanM/dmVyPTIuMi41OjE5OjMpCiAgICBhdCBIVE1MRG9jdW1lbnQuPGFub255bW91cz4gKGh0dHBzOi8vZGF0YWRvbWUuY28vd3AtY29udGVudC9wbHVnaW5zL2thdGV4L2Fzc2V0cy9yZW5kZXIuanM/dmVyPTIuMi41OjIzOjMp",
+      "value_type": "string",
+      "first_seen_t_ms": 1860,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "L2thdGV4L2Fzc2V0cy9yZW5kZXIuanM/dmVyPTIuMi41OjE5OjMpCiAgICBhdCBIVE1MRG9jdW1lbnQu…"
+      ],
+      "bucket": "host-page-extract"
+    },
+    {
+      "name": "stqe",
+      "capture_count": 2,
+      "example_value": 10737418240,
+      "value_type": "number",
+      "first_seen_t_ms": 1870,
+      "distinct_value_count": 1,
+      "sample_values": [
+        10737418240
+      ],
+      "bucket": "storage-quota"
+    },
+    {
+      "name": "stqu",
+      "capture_count": 2,
+      "example_value": 0,
+      "value_type": "number",
+      "first_seen_t_ms": 1870,
+      "distinct_value_count": 1,
+      "sample_values": [
+        0
+      ],
+      "bucket": "storage-quota"
+    },
+    {
+      "name": "svde",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1663,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "trrd",
+      "capture_count": 2,
+      "example_value": 0.817154937837316,
+      "value_type": "number",
+      "first_seen_t_ms": 1585,
+      "distinct_value_count": 2,
+      "sample_values": [
+        0.817154937837316,
+        1.2556353173737136
+      ],
+      "bucket": "viewport"
+    },
+    {
+      "name": "ts_mtp",
+      "capture_count": 2,
+      "example_value": 0,
+      "value_type": "number",
+      "first_seen_t_ms": 1771,
+      "distinct_value_count": 1,
+      "sample_values": [
+        0
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "tz",
+      "capture_count": 2,
+      "example_value": 300,
+      "value_type": "number",
+      "first_seen_t_ms": 1768,
+      "distinct_value_count": 1,
+      "sample_values": [
+        300
+      ],
+      "bucket": "timezone"
+    },
+    {
+      "name": "tzp",
+      "capture_count": 2,
+      "example_value": "America/Chicago",
+      "value_type": "string",
+      "first_seen_t_ms": 2043,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "America/Chicago"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "ua",
+      "capture_count": 2,
+      "example_value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+      "value_type": "string",
+      "first_seen_t_ms": 1771,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/14…"
+      ],
+      "bucket": "navigator"
+    },
+    {
+      "name": "ucdv",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1587,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "vc1",
+      "capture_count": 2,
+      "example_value": "probably",
+      "value_type": "string",
+      "first_seen_t_ms": 1649,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "probably"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "vc1ts",
+      "capture_count": 2,
+      "example_value": true,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1649,
+      "distinct_value_count": 1,
+      "sample_values": [
+        true
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "vc3",
+      "capture_count": 2,
+      "example_value": "maybe",
+      "value_type": "string",
+      "first_seen_t_ms": 1647,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "maybe"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "vc3ts",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1648,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "vch",
+      "capture_count": 2,
+      "example_value": "probably",
+      "value_type": "string",
+      "first_seen_t_ms": 1646,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "probably"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "vchts",
+      "capture_count": 2,
+      "example_value": true,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1646,
+      "distinct_value_count": 1,
+      "sample_values": [
+        true
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "vcmk",
+      "capture_count": 2,
+      "example_value": "maybe",
+      "value_type": "string",
+      "first_seen_t_ms": 1649,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "maybe"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "vcmkuts",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1649,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "vcmp",
+      "capture_count": 2,
+      "example_value": "",
+      "value_type": "string",
+      "first_seen_t_ms": 1648,
+      "distinct_value_count": 1,
+      "sample_values": [
+        ""
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "vcmpts",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1648,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "vco",
+      "capture_count": 2,
+      "example_value": "",
+      "value_type": "string",
+      "first_seen_t_ms": 1646,
+      "distinct_value_count": 1,
+      "sample_values": [
+        ""
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "vcots",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1646,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "vcq",
+      "capture_count": 2,
+      "example_value": "",
+      "value_type": "string",
+      "first_seen_t_ms": 1650,
+      "distinct_value_count": 1,
+      "sample_values": [
+        ""
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "vcqts",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1650,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "vcw",
+      "capture_count": 2,
+      "example_value": "probably",
+      "value_type": "string",
+      "first_seen_t_ms": 1647,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "probably"
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "vcwts",
+      "capture_count": 2,
+      "example_value": true,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1647,
+      "distinct_value_count": 1,
+      "sample_values": [
+        true
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "vnd",
+      "capture_count": 2,
+      "example_value": "Google Inc.",
+      "value_type": "string",
+      "first_seen_t_ms": 1619,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "Google Inc."
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "vpbq",
+      "capture_count": 2,
+      "example_value": true,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1664,
+      "distinct_value_count": 1,
+      "sample_values": [
+        true
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "wbd",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1771,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "wbst",
+      "capture_count": 2,
+      "example_value": true,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1661,
+      "distinct_value_count": 1,
+      "sample_values": [
+        true
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "wdif",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1625,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "wdifpnh",
+      "capture_count": 2,
+      "example_value": "1872529569",
+      "value_type": "string",
+      "first_seen_t_ms": 1645,
+      "distinct_value_count": 2,
+      "sample_values": [
+        "1872529569",
+        "656510437"
+      ],
+      "bucket": "iframe-parentNode"
+    },
+    {
+      "name": "wdifrm",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1621,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "wglo",
+      "capture_count": 2,
+      "example_value": true,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1661,
+      "distinct_value_count": 1,
+      "sample_values": [
+        true
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "wop",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1770,
+      "distinct_value_count": 1,
+      "sample_values": [
+        false
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "wsdc",
+      "capture_count": 2,
+      "example_value": true,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1662,
+      "distinct_value_count": 1,
+      "sample_values": [
+        true
+      ],
+      "bucket": "other"
+    },
+    {
+      "name": "wwl",
+      "capture_count": 2,
+      "example_value": false,
+      "value_type": "boolean",
+      "first_seen_t_ms": 2041,
+      "distinct_value_count": 2,
+      "sample_values": [
+        false,
+        "lgs"
+      ],
+      "bucket": "language"
+    },
+    {
+      "name": "wwlrv",
+      "capture_count": 1,
+      "example_value": "WyJlbi1VUyIsImVuIl0=",
+      "value_type": "string",
+      "first_seen_t_ms": 3639,
+      "distinct_value_count": 1,
+      "sample_values": [
+        "WyJlbi1VUyIsImVuIl0="
+      ],
+      "bucket": "language"
+    },
+    {
+      "name": "xt1",
+      "capture_count": 2,
+      "example_value": true,
+      "value_type": "boolean",
+      "first_seen_t_ms": 1769,
+      "distinct_value_count": 1,
+      "sample_values": [
+        true
+      ],
+      "bucket": "other"
+    }
+  ],
+  "capturedAt": "2026-05-23T12:03:19.960Z"
+}

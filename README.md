@@ -16,7 +16,7 @@ nine documented bypass surfaces, comparison vs Castle and FingerprintJS.
 > fingerprint payload via a small bundle patch. Does not submit
 > credentials, does not attempt to defeat post-gate authentication,
 > does not exfiltrate any user data. Intended audience: DataDome's
-> own research team, and argus / fingerprinting practitioners
+> own research team, and anti-bot / fingerprinting practitioners
 > studying production hardening.
 
 ---
@@ -278,10 +278,8 @@ datadome-attack-bot/
 - **[DataDome.md](DataDome.md)** — the methodology + findings
   writeup (the v5.6.6 reverse, every collector, the cipher, the
   Worker realm, the signed envelope, nine bypass surfaces).
-- `~/Dev/DD-TO-ARGUS.md` — what to steal from DataDome for the
-  argus stack: signals to adopt, detection patterns, hardening
-  lessons.
-- `~/Dev/CASTLE-TO-ARGUS.md` + `~/Dev/bots-x-castle/X.Castle.md` —
-  the Castle parallel.
+- **[bots-x-castle](https://github.com/JWally/bots-x-castle)** — the
+  same methodology applied to Castle (different vendor, same
+  chokepoint lessons).
 - `~/Dev/reading-list/datadome/` — 486 archived DataDome blog
   posts (via Wayback) for further reading.

@@ -87,7 +87,7 @@ if (differ.length) {
 // Highlight the verdict-relevant deltas
 console.log(`\n=== VERDICT-RELEVANT DELTAS ===`);
 const buckets = {
-  "Network timing (proxy fingerprint — see §1.1 DD-TO-ARGUS)": /^nt_/,
+  "Network timing (proxy fingerprint)": /^nt_/,
   "Language / accept-language (lgs/wwl/wwlrv)":                /^(lgs|wwl|wwlrv)$/,
   "Behavioral (nid = noise interaction density, crt)":         /^(nid|crt|m_[mcs]_c|m_[cm]m_r)$/,
   "Self-stack-integrity (bundle revision)":                    /^(ccsT|ccsB|ccsH|iccsH|iccsV)$/,

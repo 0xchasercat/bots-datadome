@@ -48,11 +48,19 @@ const SCRIPTS = [
     file: "recon.mjs",
     title: "  recon        — find tags.js on a DataDome-protected page",
     desc:
-      "Loads a target URL, logs every JS response, flags chunks " +
-      "matching js.datadome.co/tags.js or captcha-delivery.com/c.js. " +
+      "Loads a target URL with local Chrome, logs every JS response, " +
+      "flags chunks matching tags.js or captcha-delivery.com/i.js. " +
       "Reports the bundle version from the banner comment. Run first " +
-      "to confirm which version is deployed and verify the v(n,t) " +
-      "chokepoint regex still matches. ~1 min.",
+      "to confirm which version is deployed. ~1 min.",
+  },
+  {
+    file: "recon-chaser.mjs",
+    title: "  recon-chaser — same recon but on a remote Chaser CDP session",
+    desc:
+      "Connects to Chaser's cloud browser (patched Chrome APK on redroid), " +
+      "loads a DataDome-protected page, captures tags.js + interstitial " +
+      "POST. Use with diff.mjs to compare payloads against local native " +
+      "Chrome run. Requires CHASER_KEY env var. ~1 min.",
   },
   {
     file: "mitm.mjs",

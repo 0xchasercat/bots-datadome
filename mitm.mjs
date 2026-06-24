@@ -142,11 +142,16 @@ for (const [id, req] of Object.entries(allRequests)) {
 // Sort by timestamp
 ddTraffic.sort((a, b) => a.timestamp - b.timestamp);
 
+// Extract interstitial payloads
+const payloads = ddTraffic
+  .filter(t => /interstitial/.test(t.url) && t.method === "POST" && t.postData)
+  .map(t => ({ url: t.url, body: t.postData, timestamp: t.timestamp }));
+
 // Summary
 console.log(`\n=== CAPTURE SUMMARY ===`);
 console.log(`  total requests: ${Object.keys(allRequests).length}`);
 console.log(`  DD requests:    ${ddTraffic.length}`);
-console.log(`  timeline events: ${timeline.length}`);
+console.log(`  payloads:       ${payloads.length}`);
 
 console.log(`\nDD traffic flow:`);
 ddTraffic.forEach((t, i) => {
@@ -191,6 +196,12 @@ const bodies = ddTraffic
     bodySize: t.response.bodySize,
   }));
 writeFileSync(join(OUT, "mitm-bodies.json"), JSON.stringify(bodies, null, 2));
+
+// Save payloads
+writeFileSync(join(OUT, "mitm-payloads.json"), JSON.stringify(payloads, null, 2));
+if (payloads.length > 0) {
+  console.log(`\n  interstitial payload: ${payloads[0].body.length} bytes`);
+}
 
 await ctx.close();
 console.log(`\n  artifacts → ${OUT}/mitm-*`);

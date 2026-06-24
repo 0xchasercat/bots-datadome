@@ -124,11 +124,10 @@ const launchOpts = {
 if (PROXY) launchOpts.proxy = PROXY;
 
 const ctx = await chromium.launchPersistentContext(userDataDir, launchOpts);
-await ctx.addInitScript(initScript());
 
 const page = await ctx.newPage();
 
-// Capture tags.js response passively (no interception)
+// 5.7.0+ strategy: PURE PASSIVE capture only
 let lastTagsInfo = null;
 page.on("response", async (resp) => {
   if (/tags\.js/.test(resp.url())) {

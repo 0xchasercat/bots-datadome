@@ -142,17 +142,19 @@ page.on("response", (resp) => {
   }
 });
 
-// Capture interstitial POST body passively
-await page.route(/interstitial/, async (route) => {
-  const req = route.request();
-  if (req.method() === "POST") {
+// 5.7.0+ strategy: PURE PASSIVE capture only
+// DataDome 5.7+ detects ANY route interception (even route.continue())
+// Capture data from response listeners, process externally, inject cookies after
+
+// Capture interstitial POST body via request listener (no interception)
+page.on("request", (req) => {
+  if (/interstitial/.test(req.url()) && req.method() === "POST") {
     const postData = req.postData();
     if (postData) {
       console.log(`[capture] interstitial POST: ${postData.length} bytes`);
       capturedPayloads.push({ url: req.url(), body: postData, timestamp: Date.now() });
     }
   }
-  await route.continue();
 });
 
 // Capture tags.js response passively

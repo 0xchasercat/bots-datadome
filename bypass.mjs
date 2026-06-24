@@ -158,7 +158,7 @@ const ipInfo = await page.evaluate(() => document.body.innerText);
 console.log("  " + ipInfo.slice(0, 200));
 
 console.log("\nstep 1: warm rep on /blog/");
-const r1 = await page.goto("https://datadome.co/blog/", { waitUntil: "domcontentloaded", timeout: 30000 });
+const r1 = await page.goto("https://www.g2.com/products/playwright/reviews", { waitUntil: "domcontentloaded", timeout: 30000 });
 console.log(`  HTTP ${r1.status()}  title="${(await page.title()).slice(0, 50)}"`);
 await wander(page, 2200);
 await scroll(page, 3);

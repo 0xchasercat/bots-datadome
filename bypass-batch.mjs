@@ -132,7 +132,7 @@ console.log(`[batch] exit: ${exitIp} (${carrier})`);
 
 // Harvest article URLs from /blog/
 console.log(`[batch] loading /blog/ to harvest URLs`);
-await page.goto("https://datadome.co/blog/", { waitUntil: "domcontentloaded", timeout: 30000 });
+await page.goto("https://www.g2.com/products/playwright/reviews", { waitUntil: "domcontentloaded", timeout: 30000 });
 await wander(page, 1500);
 await scroll(page, 3);
 

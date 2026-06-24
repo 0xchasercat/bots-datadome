@@ -14,7 +14,7 @@
  * Saves to results/netdump.json (the index) and results/netdump-bodies/.
  *
  * Usage: node netdump.mjs [target-url]
- *   default target: https://datadome.co/blog/
+ *   default target: https://www.g2.com/products/playwright/reviews
  */
 
 import { chromium } from "playwright";
@@ -29,7 +29,7 @@ const BODIES = join(OUT, "netdump-bodies");
 mkdirSync(OUT, { recursive: true });
 mkdirSync(BODIES, { recursive: true });
 
-const TARGET = process.argv[2] || "https://datadome.co/blog/";
+const TARGET = process.argv[2] || "https://www.g2.com/products/playwright/reviews";
 
 const DD_HOST_RE = /datadome\.co|captcha-delivery\.com|datado\.me/;
 

@@ -1,10 +1,13 @@
 # datadome-attack-bot
 
 Reverse-engineering harness for [DataDome](https://datadome.co)'s
-bot-detection tag (`tags.js` v5.6.6, captured 2026-05-23). Demonstrates
+bot-detection tag (`tags.js` v5.7.0, captured 2026-06-25). Demonstrates
 end-to-end bypass of DataDome's challenge gate through a clean
 residential-mobile network identity, with full plaintext fingerprint
 payload captured via in-flight bundle patching.
+
+Supports both 4.x (old `v(n,t)` cipher) and 5.7.0+ (new `V(n,t)` PRNG
+cipher with custom base64 alphabet).
 
 Companion writeup: **[DataDome.md](DataDome.md)** — full methodology,
 every collector lambda walked, the XOR-keystream cipher reversed,
@@ -44,7 +47,8 @@ See README.md for context · DataDome.md for the full writeup
     recon        — find tags.js on a DataDome-protected page
     mitm         — Phase-1 native hooks + Phase-4 v(n,t) plaintext capture
     tamper       — signed-envelope tamper test (t=fe → t=d)
-    decrypt      — offline XOR-keystream decoder for captured jspl blobs
+    decrypt      — offline XOR-keystream decoder for captured jspl blobs (4.x)
+    decrypt570   — offline decoder for DataDome 5.7.0+ payloads
     netdump      — full network log of DataDome traffic on a target
     diff         — diff two plaintext payload JSON files (verdict-relevant deltas)
     quit
@@ -100,16 +104,14 @@ End-to-end gate bypass + plaintext capture in one run. Pipeline:
    `Proxy`-wrapped `JSON.stringify` / `btoa`. Self-test confirms
    `Function.prototype.toString` still returns `[native code]` for
    the wrapped APIs.
-4. Install Phase-4 route patch on `https://js.datadome.co/tags.js`:
+4. Install Phase-4 route patch on the DataDome tags.js bundle:
    inject `try{(window.__ddTap=...).push([n,t,perf])}catch(_){}` at
-   the entry of `function v(n,t){var c,e;`. Patch adds +82 bytes; the
-   bundle still runs cleanly.
-5. Visit `https://datadome.co/blog/` (not gated; warms up the cookie
-   jar and runs humanlike mouse-wander + scroll).
-6. Click-through to a `/threat-research/` article URL.
-7. Wait for the JS tag to POST to `api-js.datadome.co/js/` (the
-   verdict).
-8. Dump the article HTML, the captured plaintext signal list,
+   the entry of the main collection function. Patch adds +82 bytes;
+   the bundle still runs cleanly.
+5. Visit `https://www.g2.com/products/playwright/reviews` (DataDome-protected;
+   warms up the cookie jar and runs humanlike mouse-wander + scroll).
+6. Wait for the JS tag to POST to the DataDome API (the verdict).
+7. Dump the page HTML, the captured plaintext signal list,
    the verdict JSON, screenshot, full network log.
 
 Result on a clean mobile identity: HTTP 200 on the article, ~200

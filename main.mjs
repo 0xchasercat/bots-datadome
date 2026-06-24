@@ -78,13 +78,22 @@ const SCRIPTS = [
   },
   {
     file: "decrypt.mjs",
-    title: "  decrypt      — offline XOR-keystream decoder for captured jspl",
+    title: "  decrypt      — offline XOR-keystream decoder for captured jspl (4.x)",
     desc:
       "Given (ddjskey, jspl_base64url, request_timestamp_ms): reverses " +
       "the custom base64-like alphabet, runs the Marsaglia-xorshift PRNG " +
       "with the right seed, XORs the keystream, and prints the TLV " +
       "plaintext bytes. Use to verify the cipher reversal against a " +
       "known bypass capture. Pure offline — no browser. ~5 sec.",
+  },
+  {
+    file: "decrypt_v570.mjs",
+    title: "  decrypt570   — offline decoder for DataDome 5.7.0+ payloads",
+    desc:
+      "Decodes DataDome 5.7.0+ payloads using the new V(n,t) PRNG cipher " +
+      "with FNV-1a hash, custom base64 alphabet, and double-XOR encoding. " +
+      "Supports both raw encoded payloads and form-encoded data (jsData, " +
+      "eventCounters, etc.). Pure offline — no browser. ~5 sec.",
   },
   {
     file: "netdump.mjs",

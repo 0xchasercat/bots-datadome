@@ -8,7 +8,7 @@
  * compare a direct-network run against a proxied run for the diff.mjs.
  *
  * Usage: node mitm.mjs [target-url]
- *   default target: https://datadome.co/blog/
+ *   default target: https://www.g2.com/products/playwright/reviews
  */
 
 import { chromium } from "playwright";
@@ -21,7 +21,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT = join(__dirname, "results");
 mkdirSync(OUT, { recursive: true });
 
-const TARGET = process.argv[2] || "https://datadome.co/blog/";
+const TARGET = process.argv[2] || "https://www.g2.com/products/playwright/reviews";
 
 function initScript() {
   return `(() => {

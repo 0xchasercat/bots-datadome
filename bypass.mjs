@@ -62,21 +62,16 @@ if (PROXY) {
 const TARGET = process.argv[2] || "https://www.g2.com/products/playwright/reviews";
 
 // ── Phase-1 init script ─────────────────────────────────────
+// Minimal — only sets up the tap array. No Proxy wrapping.
+// DataDome detects wrapped JSON.stringify/btoa and flags the session.
 function initScript() {
   return `(() => {
     if (window.__ddInitInstalled) return;
     window.__ddInitInstalled = true;
     window.__ddTap = [];
-    const wrap = (orig) => new Proxy(orig, { apply: (t, th, a) => Reflect.apply(t, th, a) });
-    try { JSON.stringify = wrap(JSON.stringify); } catch {}
-    try { window.btoa = wrap(window.btoa); } catch {}
-    window.__ddSelfTest = () => ({
-      jsonStringifyNative: Function.prototype.toString.call(JSON.stringify).includes("[native code]"),
-      btoaNative: Function.prototype.toString.call(window.btoa).includes("[native code]"),
-    });
     window.__ddDump = () => ({
       tap: window.__ddTap || [],
-      selfTest: typeof window.__ddSelfTest === "function" ? window.__ddSelfTest() : null,
+      selfTest: null,
     });
   })();`;
 }

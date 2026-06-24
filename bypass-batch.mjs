@@ -1,28 +1,25 @@
 #!/usr/bin/env node
 /**
- * bypass-batch.mjs — multi-article POC. Pull N DataDome-gated articles in
- * one run through a single SOAX mobile session.
+ * bypass-batch.mjs — multi-article POC. Pull N DataDome-gated pages in
+ * one run through a single browser session.
  *
  * Pipeline (reuses bypass.mjs's logic, batched):
- *  1. SOAX mobile creds from ~/Dev/soax.txt (or $SOAX_CONFIG).
- *  2. Single persistent real-Chrome context through the proxy.
- *  3. Phase-1 + Phase-4 MITM hooks installed.
- *  4. Visit /blog/ to warm reputation and harvest article URLs.
- *  5. For each of the first N article URLs, navigate, wait for solve,
+ *  1. Launch Chrome (headed) — direct or through $PROXY if set.
+ *  2. Phase-1 + Phase-4 MITM hooks installed.
+ *  3. Visit target to warm reputation and harvest URLs.
+ *  4. For each of the first N URLs, navigate, wait for solve,
  *     capture HTML + plaintext payload + verdict.
- *  6. Write per-article files + a batch summary.
+ *  5. Write per-page files + a batch summary.
  *
- * Usage: node bypass-batch.mjs [N]    (default N=5; max 15)
- *
- * Pace: ~30-60 sec per article including humanlike behavior. Respects
- * SOAX session length (300s mobile) — if you ask for many articles
- * you may exceed it; the script will keep going through any
- * intermediate failures.
+ * Usage:
+ *   node bypass-batch.mjs [N]                          # direct, default 5
+ *   node bypass-batch.mjs 10 https://target.com        # custom count + URL
+ *   PROXY=socks5://user:pass@host:port node bypass-batch.mjs  # via proxy
  */
 
-import { chromium } from "playwright";
-import { mkdirSync, mkdtempSync, writeFileSync, readFileSync, existsSync } from "node:fs";
-import { tmpdir, homedir } from "node:os";
+import { chromium } from "patchright";
+import { mkdirSync, mkdtempSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -30,22 +27,44 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT = join(__dirname, "results", "batch");
 mkdirSync(OUT, { recursive: true });
 
-const N = Math.min(15, parseInt(process.argv[2] || "5"));
+// ── Parse args ──────────────────────────────────────────────
+const args = process.argv.slice(2).filter(a => !a.includes("="));
+let N = 5;
+let baseUrl = "https://www.g2.com/products/playwright/reviews";
 
-// ── SOAX ──────────────────────────────────────────────────
-const SOAX_PATH = process.env.SOAX_CONFIG || join(homedir(), "Dev", "soax.txt");
-if (!existsSync(SOAX_PATH)) {
-  console.error(`[batch] no SOAX config at ${SOAX_PATH}`);
-  process.exit(1);
+for (const arg of args) {
+  if (/^\d+$/.test(arg)) {
+    N = Math.min(15, parseInt(arg));
+  } else if (arg.startsWith("http")) {
+    baseUrl = arg;
+  }
 }
-const SOAX = readFileSync(SOAX_PATH, "utf8");
-const mobileLine = SOAX.split("\n").find((l) => l.startsWith("MOBILE:"));
-const m = mobileLine.match(/-x (\S+):(\S+)@(\S+):(\d+)/);
-const PROXY = { server: `http://${m[3]}:${m[4]}`, username: m[1], password: m[2] };
-console.log(`[soax] ${PROXY.server}  user=${PROXY.username.slice(0, 24)}…`);
-console.log(`[batch] target: ${N} articles\n`);
 
-// ── Init script + tag patch (same as bypass.mjs) ─────────
+// ── Proxy config ────────────────────────────────────────────
+function parseProxy(proxyStr) {
+  if (!proxyStr) return undefined;
+  try {
+    const url = new URL(proxyStr);
+    const proxy = { server: `${url.protocol}//${url.hostname}:${url.port}` };
+    if (url.username) proxy.username = decodeURIComponent(url.username);
+    if (url.password) proxy.password = decodeURIComponent(url.password);
+    return proxy;
+  } catch (e) {
+    console.error(`[proxy] invalid PROXY: ${proxyStr}`);
+    process.exit(1);
+  }
+}
+
+const PROXY = parseProxy(process.env.PROXY);
+if (PROXY) {
+  console.log(`[proxy] ${PROXY.server}  user=${PROXY.username ? PROXY.username.slice(0, 20) + "…" : "(none)"}`);
+} else {
+  console.log(`[proxy] none — connecting directly`);
+}
+
+console.log(`[batch] target: ${N} pages from ${baseUrl}\n`);
+
+// ── Init script + tag patch ────────────────────────────────
 function initScript() {
   return `(() => {
     if (window.__ddInitInstalled) return;
@@ -60,12 +79,23 @@ function initScript() {
 }
 
 function patchTagsJs(raw) {
-  const re = /function v\(n,t\)\{var c,e;/;
-  const m = raw.match(re);
-  if (!m) return { error: "v(n,t) header not found" };
-  const inj = `try{(window.__ddTap=window.__ddTap||[]).push([n,t,performance.now()|0])}catch(_){}`;
-  const end = m.index + m[0].length;
-  return { patched: raw.slice(0, end) + inj + raw.slice(end) };
+  // 4.x
+  const re4x = /function v\(n,t\)\{var c,e;/;
+  const m4 = raw.match(re4x);
+  if (m4) {
+    const inj = `try{(window.__ddTap=window.__ddTap||[]).push([n,t,performance.now()|0])}catch(_){}`;
+    const end = m4.index + m4[0].length;
+    return { patched: raw.slice(0, end) + inj + raw.slice(end), version: "4.x" };
+  }
+  // 5.7.0+
+  const re570 = /return q\s*=\s*function\s*\(\s*n\s*,\s*t\s*\)\s*\{/;
+  const m5 = raw.match(re570);
+  if (m5) {
+    const inj = `try{(window.__ddTap=window.__ddTap||[]).push([n,t,performance.now()|0])}catch(_){}`;
+    const end = m5.index + m5[0].length;
+    return { patched: raw.slice(0, end) + inj + raw.slice(end), version: "5.7.0+" };
+  }
+  return { error: "no known chokepoint found" };
 }
 
 async function wander(page, ms) {
@@ -85,21 +115,25 @@ async function scroll(page, n) {
   }
 }
 
-// ── Main ──────────────────────────────────────────────────
+// ── Main ────────────────────────────────────────────────────
 const userDataDir = mkdtempSync(join(tmpdir(), "dd-batch-"));
-const ctx = await chromium.launchPersistentContext(userDataDir, {
+const launchOpts = {
   headless: false,
   channel: "chrome",
   args: ["--disable-blink-features=AutomationControlled"],
   viewport: { width: 1366, height: 900 },
   locale: "en-US",
   timezoneId: "America/Chicago",
-  proxy: PROXY,
-});
+};
+if (PROXY) launchOpts.proxy = PROXY;
+
+const ctx = await chromium.launchPersistentContext(userDataDir, launchOpts);
 await ctx.addInitScript(initScript());
 
 let lastPatch = { patched: false };
-await ctx.route(/https:\/\/js\.datadome\.co\/tags\.js/, async (route) => {
+await ctx.route(/tags\.js/, async (route) => {
+  const url = route.request().url();
+  if (!/datadome|captcha-delivery/.test(url)) return route.continue();
   try {
     const resp = await route.fetch();
     const raw = (await resp.body()).toString("utf8");
@@ -108,7 +142,7 @@ await ctx.route(/https:\/\/js\.datadome\.co\/tags\.js/, async (route) => {
       lastPatch = { patched: false, error: r.error };
       await route.fulfill({ response: resp, body: raw });
     } else {
-      lastPatch = { patched: true, delta: r.patched.length - raw.length };
+      lastPatch = { patched: true, version: r.version, delta: r.patched.length - raw.length };
       await route.fulfill({
         status: resp.status(),
         headers: resp.headers(),
@@ -123,88 +157,72 @@ await ctx.route(/https:\/\/js\.datadome\.co\/tags\.js/, async (route) => {
 
 const page = await ctx.newPage();
 
-// Smoke check
-await page.goto("https://checker.soax.com/api/ipinfo", { timeout: 30000 });
-const ipInfo = await page.evaluate(() => document.body.innerText);
-const exitIp = ipInfo.match(/"ip":"([^"]+)"/)?.[1];
-const carrier = ipInfo.match(/"carrier":"([^"]+)"/)?.[1];
-console.log(`[batch] exit: ${exitIp} (${carrier})`);
+// Check exit IP
+let exitIp = "?";
+try {
+  await page.goto("https://api.ipify.org?format=json", { timeout: 15000 });
+  exitIp = (await page.evaluate(() => document.body.innerText)).replace(/"/g, "");
+  console.log(`[batch] exit IP: ${exitIp}`);
+} catch {
+  console.log(`[batch] could not determine IP`);
+}
 
-// Harvest article URLs from /blog/
-console.log(`[batch] loading /blog/ to harvest URLs`);
-await page.goto("https://www.g2.com/products/playwright/reviews", { waitUntil: "domcontentloaded", timeout: 30000 });
+// Harvest links from base URL
+console.log(`[batch] loading ${baseUrl} to harvest links`);
+await page.goto(baseUrl, { waitUntil: "domcontentloaded", timeout: 30000 });
 await wander(page, 1500);
 await scroll(page, 3);
 
-const articleUrls = await page.$$eval(
-  'a[href*="datadome.co/"]',
-  (as) => [...new Set(
-    as.map((a) => a.href)
-      .filter((h) => /datadome\.co\/(threat-research|learning-center|bot-management-protection|agent-trust-management|guides)\/[a-z0-9-]+\/?$/.test(h))
-  )]
+const links = await page.$$eval("a[href]", (as) =>
+  [...new Set(as.map((a) => a.href).filter((h) => h.startsWith("http")))]
 );
-console.log(`[batch] found ${articleUrls.length} candidate URLs; taking first ${N}`);
+console.log(`[batch] found ${links.length} links; taking first ${N}`);
 
-if (articleUrls.length < N) {
-  console.log(`[batch] only ${articleUrls.length} URLs found; continuing with what we have`);
-}
-
-const targets = articleUrls.slice(0, N);
+const targets = links.slice(0, N);
 targets.forEach((u, i) => console.log(`    ${i + 1}. ${u}`));
 
 const summary = {
-  exitIp, carrier,
+  exitIp,
+  baseUrl,
   started: new Date().toISOString(),
   patchInfo: null,
-  articles: [],
+  pages: [],
 };
 
 for (let i = 0; i < targets.length; i++) {
   const url = targets[i];
-  const slug = url.replace(/^https?:\/\/[^/]+\//, "").replace(/\/+$/, "").replace(/\//g, "_");
+  const slug = url.replace(/^https?:\/\/[^/]+\//, "").replace(/\/+$/, "").replace(/[^a-zA-Z0-9]/g, "_").slice(0, 40) || `page_${i}`;
   const tag = `[${i + 1}/${targets.length}]`;
   console.log(`\n${tag} ${url}`);
 
-  // Reset the tap so each article's plaintext is isolated
   await page.evaluate(() => window.__ddResetTap?.());
 
   const ddPostPromise = page.waitForResponse(
-    (r) => /api-js\.datadome\.co\/js/.test(r.url()),
-    { timeout: 25000 }
+    (r) => /api-js\.datadome\.co\/js|captcha-delivery\.com/.test(r.url()),
+    { timeout: 20000 }
   ).catch(() => null);
 
   let r;
   try {
     r = await page.goto(url, { waitUntil: "domcontentloaded", timeout: 45000 });
   } catch (e) {
-    console.log(`  ${tag} nav error: ${e.message}`);
-    summary.articles.push({ url, slug, error: e.message });
+    console.log(`  nav error: ${e.message}`);
+    summary.pages.push({ url, slug, error: e.message });
     continue;
   }
-  console.log(`  ${tag} initial HTTP ${r.status()}`);
+  console.log(`  HTTP ${r.status()}`);
 
   await wander(page, 1200);
   const ddPost = await ddPostPromise;
-  if (ddPost) console.log(`  ${tag} JS POST: ${ddPost.status()}`);
+  if (ddPost) console.log(`  DD POST: ${ddPost.status()}`);
   await wander(page, 1000);
   await scroll(page, 2);
 
-  let solved = false;
-  try {
-    await page.waitForFunction(() => {
-      const t = document.title.toLowerCase();
-      if (t === "datadome.co" || t.includes("blocked")) return false;
-      const h1 = document.querySelector("h1");
-      return h1 && h1.innerText.length > 12;
-    }, { timeout: 10000 });
-    solved = true;
-  } catch {}
-
   const finalTitle = await page.title();
   const finalHtml = await page.content();
-  const articleH1 = await page.evaluate(() => document.querySelector("h1")?.innerText || "");
   const bodyText = await page.evaluate(() => document.body.innerText.replace(/\s+/g, " "));
-  const blocked = /you have been blocked/i.test(bodyText);
+  const blocked = /you have been blocked/i.test(bodyText) || /verification required/i.test(bodyText);
+  const solved = !blocked && finalHtml.length > 10000;
 
   writeFileSync(join(OUT, `${slug}.html`), finalHtml);
   const dump = await page.evaluate(() => window.__ddDump ? window.__ddDump() : { tap: [] });
@@ -216,29 +234,28 @@ for (let i = 0; i < targets.length; i++) {
 
   const verdict = {
     url, slug,
-    status: r.status(), finalTitle, articleH1,
+    status: r.status(), finalTitle,
     bytes: finalHtml.length,
     solved, blocked,
     signalCount: dump.tap.length,
   };
-  summary.articles.push(verdict);
+  summary.pages.push(verdict);
   summary.patchInfo = lastPatch;
-  console.log(`  ${tag} ${solved ? "✓" : "✗"}  ${finalHtml.length}B  signals=${dump.tap.length}  "${articleH1.slice(0, 60)}"`);
+  console.log(`  ${solved ? "✓" : "✗"}  ${finalHtml.length}B  signals=${dump.tap.length}  "${finalTitle.slice(0, 60)}"`);
 
-  // Pause between articles to look human and stay under rate limits
   await page.waitForTimeout(2000 + Math.random() * 2000);
 }
 
 summary.finished = new Date().toISOString();
-summary.totalFetched = summary.articles.filter((a) => a.solved).length;
+summary.totalPassed = summary.pages.filter((p) => p.solved).length;
 
 writeFileSync(join(OUT, "summary.json"), JSON.stringify(summary, null, 2));
 
 console.log(`\n=== BATCH SUMMARY ===`);
-console.log(`  exit IP / carrier:  ${exitIp} / ${carrier}`);
-console.log(`  patch:              ${summary.patchInfo?.patched ? "OK" : "FAILED"}`);
-console.log(`  articles requested: ${targets.length}`);
-console.log(`  articles fetched:   ${summary.totalFetched} ✓ / ${targets.length - summary.totalFetched} blocked`);
+console.log(`  exit IP:        ${exitIp}`);
+console.log(`  patch:          ${summary.patchInfo?.patched ? `OK (${summary.patchInfo.version})` : "FAILED"}`);
+console.log(`  pages requested: ${targets.length}`);
+console.log(`  pages passed:    ${summary.totalPassed} ✓ / ${targets.length - summary.totalPassed} blocked`);
 console.log(`\n  artifacts → ${OUT}/`);
 
 await ctx.close();

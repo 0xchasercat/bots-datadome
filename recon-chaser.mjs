@@ -63,10 +63,21 @@ try {
   const capturedPayloads = [];
   let iJsBody = null;
   let interstitialResponse = null;
+  let initial403 = null;
 
   page.on("response", async (resp) => {
     const u = resp.url();
     const ct = resp.headers()["content-type"] || "";
+
+    // Capture the initial 403 response — this contains the dd object with dd.b
+    if (resp.status() === 403 && /g2\.com/.test(u) && !initial403) {
+      try {
+        const body = (await resp.text()).substring(0, 5000);
+        initial403 = { url: u, headers: resp.headers(), body };
+        console.log(`[403] captured initial response: ${body.length} bytes`);
+      } catch {}
+    }
+
     if (/javascript|application\/json/.test(ct) || /\.js(\?|$)/.test(u)) {
       jsResponses.push({
         url: u,
@@ -74,7 +85,6 @@ try {
         bytes: parseInt(resp.headers()["content-length"] || "0"),
       });
     }
-    // Capture i.js body — this is where fingerprint collection happens
     if (/captcha-delivery\.com\/i\.js/.test(u)) {
       try {
         iJsBody = (await resp.body()).toString("utf8");
@@ -87,7 +97,6 @@ try {
         tagsUrl = u;
       } catch {}
     }
-    // Capture interstitial response (the verdict before tags.js)
     if (/interstitial/.test(u) && resp.request().method() === "POST") {
       try {
         interstitialResponse = {
@@ -176,6 +185,7 @@ try {
     bundle: bundleInfo,
     capturedPayloads,
     interstitialResponse,
+    initial403,
     hasITagJs: !!iJsBody,
     iJsSize: iJsBody?.length || 0,
     capturedAt: new Date().toISOString(),
@@ -186,6 +196,11 @@ try {
   // Save i.js for analysis
   if (iJsBody) {
     writeFileSync(join(OUT, "recon-chaser-ijs.js"), iJsBody);
+  }
+
+  // Save initial 403 response for comparison
+  if (initial403) {
+    writeFileSync(join(OUT, "recon-chaser-403.json"), JSON.stringify(initial403, null, 2));
   }
 
   // Also save the tags.js bundle for diff

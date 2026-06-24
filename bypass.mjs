@@ -134,11 +134,20 @@ const page = await ctx.newPage();
 const network = [];
 const consoleMsgs = [];
 const capturedPayloads = [];
+let initial403 = null;
 page.on("console", (m) => consoleMsgs.push(`[${m.type()}] ${m.text()}`));
-page.on("response", (resp) => {
+page.on("response", async (resp) => {
   const u = resp.url();
   if (/datadome|captcha-delivery|datado\.me/.test(u)) {
     network.push({ url: u, status: resp.status(), method: resp.request().method() });
+  }
+  // Capture the initial 403 response — contains dd object with dd.b
+  if (resp.status() === 403 && !initial403) {
+    try {
+      const body = (await resp.text()).substring(0, 5000);
+      initial403 = { url: u, headers: resp.headers(), body };
+      console.log(`[403] captured initial response: ${body.length} bytes`);
+    } catch {}
   }
 });
 
@@ -252,6 +261,7 @@ const verdict = {
   tapLen: dump?.tap?.length ?? null,
   selfTest: dump?.selfTest ?? null,
   tagsInfo,
+  initial403,
   capturedAt: new Date().toISOString(),
 };
 writeFileSync(join(OUT, "bypass.json"), JSON.stringify(verdict, null, 2));
@@ -267,6 +277,9 @@ writeFileSync(join(OUT, "bypass-plaintext.json"), JSON.stringify(plaintext, null
 writeFileSync(join(OUT, "bypass-network.json"), JSON.stringify(network, null, 2));
 writeFileSync(join(OUT, "bypass-console.txt"), consoleMsgs.join("\n"));
 writeFileSync(join(OUT, "bypass-payloads.json"), JSON.stringify(capturedPayloads, null, 2));
+if (initial403) {
+  writeFileSync(join(OUT, "bypass-403.json"), JSON.stringify(initial403, null, 2));
+}
 
 await ctx.close();
 console.log(`\n  artifacts → ${OUT}/bypass*`);

@@ -129,7 +129,6 @@ const userDataDir = mkdtempSync(join(tmpdir(), "dd-bypass-"));
 const launchOpts = {
   headless: false,
   channel: "chrome",
-  args: ["--disable-blink-features=AutomationControlled"],
   viewport: { width: 1366, height: 900 },
   locale: "en-US",
   timezoneId: "America/Chicago",

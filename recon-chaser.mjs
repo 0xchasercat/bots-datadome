@@ -61,6 +61,8 @@ try {
   let tagsBody = null;
   let tagsUrl = null;
   const capturedPayloads = [];
+  let iJsBody = null;
+  let interstitialResponse = null;
 
   page.on("response", async (resp) => {
     const u = resp.url();
@@ -72,10 +74,26 @@ try {
         bytes: parseInt(resp.headers()["content-length"] || "0"),
       });
     }
+    // Capture i.js body — this is where fingerprint collection happens
+    if (/captcha-delivery\.com\/i\.js/.test(u)) {
+      try {
+        iJsBody = (await resp.body()).toString("utf8");
+        console.log(`[i.js] captured ${iJsBody.length} bytes`);
+      } catch {}
+    }
     if (/tags\.js/.test(u) && !tagsBody) {
       try {
         tagsBody = (await resp.body()).toString("utf8");
         tagsUrl = u;
+      } catch {}
+    }
+    // Capture interstitial response (the verdict before tags.js)
+    if (/interstitial/.test(u) && resp.request().method() === "POST") {
+      try {
+        interstitialResponse = {
+          status: resp.status(),
+          body: (await resp.text()).substring(0, 1000),
+        };
       } catch {}
     }
   });
@@ -157,10 +175,18 @@ try {
     ddRelated,
     bundle: bundleInfo,
     capturedPayloads,
+    interstitialResponse,
+    hasITagJs: !!iJsBody,
+    iJsSize: iJsBody?.length || 0,
     capturedAt: new Date().toISOString(),
   };
 
   writeFileSync(join(OUT, "recon-chaser.json"), JSON.stringify(result, null, 2));
+
+  // Save i.js for analysis
+  if (iJsBody) {
+    writeFileSync(join(OUT, "recon-chaser-ijs.js"), iJsBody);
+  }
 
   // Also save the tags.js bundle for diff
   if (tagsBody) {

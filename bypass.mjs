@@ -125,13 +125,10 @@ const launchOpts = {
   headless: false,
   channel: "chrome",
   viewport: { width: 1366, height: 900 },
-  locale: "en-US",
-  timezoneId: "America/Chicago",
 };
 if (PROXY) launchOpts.proxy = PROXY;
 
 const ctx = await chromium.launchPersistentContext(userDataDir, launchOpts);
-await ctx.addInitScript(initScript());
 
 const page = await ctx.newPage();
 const network = [];
@@ -145,8 +142,7 @@ page.on("response", (resp) => {
   }
 });
 
-// Capture interstitial POST body (contains the plaintext payload)
-// Do NOT intercept tags.js — route.fetch() makes a second request that DataDome detects
+// Capture interstitial POST body passively
 await page.route(/interstitial/, async (route) => {
   const req = route.request();
   if (req.method() === "POST") {
@@ -159,7 +155,7 @@ await page.route(/interstitial/, async (route) => {
   await route.continue();
 });
 
-// Capture tags.js response for version detection (passive, no second request)
+// Capture tags.js response passively
 let tagsInfo = null;
 page.on("response", async (resp) => {
   if (/tags\.js/.test(resp.url())) {

@@ -64,13 +64,19 @@ const SCRIPTS = [
   },
   {
     file: "mitm.mjs",
-    title: "  mitm         — Phase-1 native hooks + Phase-4 v(n,t) plaintext capture",
+    title: "  mitm         — full network capture with CDP (TLS, headers, bodies)",
     desc:
-      "Generic capture run (no SOAX). Installs the same MITM as bypass, " +
-      "visits a target URL, dumps the in-flight plaintext signal list. " +
-      "Use for a quick local capture or when you already have a clean " +
-      "IP. Output: results/mitm.json with the plaintext payload + " +
-      "self-test results + patch metadata. ~1 min.",
+      "Captures ALL DataDome-related traffic via CDP: request headers, " +
+      "response headers, TLS/security details, protocol, and full bodies. " +
+      "Use mitm-chaser.mjs for remote comparison. ~1 min.",
+  },
+  {
+    file: "mitm-chaser.mjs",
+    title: "  mitm-chaser  — same full capture on a remote Chaser session",
+    desc:
+      "Connects to Chaser's cloud browser, captures full DD network traffic " +
+      "via CDP. Diff mitm-headers.json vs mitm-chaser-headers.json to find " +
+      "what DataDome sees differently at the network layer. Requires CHASER_KEY.",
   },
   {
     file: "tamper.mjs",

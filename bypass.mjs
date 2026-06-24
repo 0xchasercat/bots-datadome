@@ -133,35 +133,6 @@ if (PROXY) launchOpts.proxy = PROXY;
 const ctx = await chromium.launchPersistentContext(userDataDir, launchOpts);
 await ctx.addInitScript(initScript());
 
-// Patch tags.js in-flight (works for both 4.x and 5.7.0+)
-let patchInfo = { patched: false };
-await ctx.route(/tags\.js/, async (route) => {
-  const url = route.request().url();
-  console.log(`[patch] intercepted: ${url}`);
-  try {
-    const resp = await route.fetch();
-    const raw = (await resp.body()).toString("utf8");
-    const r = patchTagsJs(raw);
-    if (r.error) {
-      patchInfo = { patched: false, error: r.error, len: raw.length };
-      console.log(`[patch] FAILED: ${r.error}`);
-      await route.fulfill({ response: resp, body: raw });
-    } else {
-      patchInfo = { patched: true, version: r.version, rawLen: raw.length, patchedLen: r.patched.length };
-      console.log(`[patch] tags.js (${r.version})  ${raw.length}B → ${r.patched.length}B`);
-      await route.fulfill({
-        status: resp.status(),
-        headers: resp.headers(),
-        contentType: resp.headers()["content-type"] || "application/javascript",
-        body: r.patched,
-      });
-    }
-  } catch (e) {
-    console.log(`[patch] error: ${e.message}`);
-    try { await route.continue(); } catch {}
-  }
-});
-
 const page = await ctx.newPage();
 const network = [];
 const consoleMsgs = [];
@@ -175,7 +146,8 @@ page.on("response", (resp) => {
 });
 
 // Capture interstitial POST body (contains the plaintext payload)
-await ctx.route(/interstitial/, async (route) => {
+// Do NOT intercept tags.js — route.fetch() makes a second request that DataDome detects
+await page.route(/interstitial/, async (route) => {
   const req = route.request();
   if (req.method() === "POST") {
     const postData = req.postData();
@@ -185,6 +157,19 @@ await ctx.route(/interstitial/, async (route) => {
     }
   }
   await route.continue();
+});
+
+// Capture tags.js response for version detection (passive, no second request)
+let tagsInfo = null;
+page.on("response", async (resp) => {
+  if (/tags\.js/.test(resp.url())) {
+    try {
+      const body = (await resp.body()).toString("utf8");
+      const versionMatch = body.match(/version\s+(\d+\.\d+\.\d+)/i);
+      tagsInfo = { url: resp.url(), size: body.length, version: versionMatch?.[1] || "unknown" };
+      console.log(`[tags] ${resp.url()}  ${body.length}B  v${tagsInfo.version}`);
+    } catch {}
+  }
 });
 
 // Step 0: check exit IP
@@ -251,7 +236,7 @@ console.log(`  passed?      ${solved ? "YES ✓" : "NO"}`);
 console.log(`  blocked?     ${blocked ? "YES" : "no"}`);
 console.log(`  tap signals: ${dump?.tap?.length ?? "?"}`);
 console.log(`  self-test:   ${JSON.stringify(dump?.selfTest)}`);
-console.log(`  patch:       ${JSON.stringify(patchInfo)}`);
+console.log(`  tags:        ${tagsInfo ? `v${tagsInfo.version} (${tagsInfo.size}B)` : "not captured"}`);
 
 const ddCookie2 = (await ctx.cookies()).find((c) => c.name === "datadome");
 
@@ -268,7 +253,7 @@ const verdict = {
   cookieAfter: ddCookie2?.value || null,
   tapLen: dump?.tap?.length ?? null,
   selfTest: dump?.selfTest ?? null,
-  patchInfo,
+  tagsInfo,
   capturedAt: new Date().toISOString(),
 };
 writeFileSync(join(OUT, "bypass.json"), JSON.stringify(verdict, null, 2));
@@ -276,7 +261,7 @@ writeFileSync(join(OUT, "bypass.json"), JSON.stringify(verdict, null, 2));
 const plaintext = {
   target: TARGET,
   capturedAt: verdict.capturedAt,
-  patchInfo,
+  tagsInfo,
   signalCount: dump?.tap?.length ?? 0,
   signals: (dump?.tap || []).map(([name, value, t]) => ({ name, value, t_ms: t })),
 };

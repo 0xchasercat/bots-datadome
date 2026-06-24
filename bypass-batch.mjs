@@ -126,35 +126,19 @@ if (PROXY) launchOpts.proxy = PROXY;
 const ctx = await chromium.launchPersistentContext(userDataDir, launchOpts);
 await ctx.addInitScript(initScript());
 
-let lastPatch = { patched: false };
-await ctx.route(/tags\.js/, async (route) => {
-  try {
-    const resp = await route.fetch();
-    const raw = (await resp.body()).toString("utf8");
-    const r = patchTagsJs(raw);
-    if (r.error) {
-      lastPatch = { patched: false, error: r.error };
-      await route.fulfill({ response: resp, body: raw });
-    } else {
-      lastPatch = { patched: true, version: r.version, delta: r.patched.length - raw.length };
-      await route.fulfill({
-        status: resp.status(),
-        headers: resp.headers(),
-        contentType: resp.headers()["content-type"] || "application/javascript",
-        body: r.patched,
-      });
-    }
-  } catch {
-    try { await route.continue(); } catch {}
-  }
-});
-    }
-  } catch {
-    try { await route.continue(); } catch {}
-  }
-});
-
 const page = await ctx.newPage();
+
+// Capture tags.js response passively (no interception)
+let lastTagsInfo = null;
+page.on("response", async (resp) => {
+  if (/tags\.js/.test(resp.url())) {
+    try {
+      const body = (await resp.body()).toString("utf8");
+      const versionMatch = body.match(/version\s+(\d+\.\d+\.\d+)/i);
+      lastTagsInfo = { url: resp.url(), size: body.length, version: versionMatch?.[1] || "unknown" };
+    } catch {}
+  }
+});
 
 // Check exit IP
 let exitIp = "?";
@@ -239,7 +223,7 @@ for (let i = 0; i < targets.length; i++) {
     signalCount: dump.tap.length,
   };
   summary.pages.push(verdict);
-  summary.patchInfo = lastPatch;
+  summary.tagsInfo = lastTagsInfo;
   console.log(`  ${solved ? "✓" : "✗"}  ${finalHtml.length}B  signals=${dump.tap.length}  "${finalTitle.slice(0, 60)}"`);
 
   await page.waitForTimeout(2000 + Math.random() * 2000);
@@ -252,7 +236,7 @@ writeFileSync(join(OUT, "summary.json"), JSON.stringify(summary, null, 2));
 
 console.log(`\n=== BATCH SUMMARY ===`);
 console.log(`  exit IP:        ${exitIp}`);
-console.log(`  patch:          ${summary.patchInfo?.patched ? `OK (${summary.patchInfo.version})` : "FAILED"}`);
+console.log(`  tags:           ${summary.tagsInfo ? `v${summary.tagsInfo.version}` : "not captured"}`);
 console.log(`  pages requested: ${targets.length}`);
 console.log(`  pages passed:    ${summary.totalPassed} ✓ / ${targets.length - summary.totalPassed} blocked`);
 console.log(`\n  artifacts → ${OUT}/`);

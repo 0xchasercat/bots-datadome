@@ -71,9 +71,6 @@ function initScript() {
     window.__ddInitInstalled = true;
     window.__ddTap = [];
     window.__ddResetTap = () => { window.__ddTap = []; };
-    const wrap = (orig) => new Proxy(orig, { apply: (t, th, a) => Reflect.apply(t, th, a) });
-    try { JSON.stringify = wrap(JSON.stringify); } catch {}
-    try { window.btoa = wrap(window.btoa); } catch {}
     window.__ddDump = () => ({ tap: window.__ddTap || [] });
   })();`;
 }

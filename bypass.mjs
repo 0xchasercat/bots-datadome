@@ -62,17 +62,13 @@ if (PROXY) {
 const TARGET = process.argv[2] || "https://www.g2.com/products/playwright/reviews";
 
 // ── Phase-1 init script ─────────────────────────────────────
-// Wraps JSON.stringify/btoa with Proxy to intercept DataDome's
-// encoding calls and capture the plaintext payload.
-// Requires a clean IP — flagged IPs will detect the wrapping.
+// Sets up tap array for signal collection. No Proxy wrapping —
+// DataDome detects that. Payload is captured from network instead.
 function initScript() {
   return `(() => {
     if (window.__ddInitInstalled) return;
     window.__ddInitInstalled = true;
     window.__ddTap = [];
-    const wrap = (orig) => new Proxy(orig, { apply: (t, th, a) => Reflect.apply(t, th, a) });
-    try { JSON.stringify = wrap(JSON.stringify); } catch {}
-    try { window.btoa = wrap(window.btoa); } catch {}
     window.__ddDump = () => ({
       tap: window.__ddTap || [],
       selfTest: null,
@@ -170,12 +166,26 @@ await ctx.route("**/*tags*", async (route) => {
 const page = await ctx.newPage();
 const network = [];
 const consoleMsgs = [];
+const capturedPayloads = [];
 page.on("console", (m) => consoleMsgs.push(`[${m.type()}] ${m.text()}`));
 page.on("response", (resp) => {
   const u = resp.url();
   if (/datadome|captcha-delivery|datado\.me/.test(u)) {
     network.push({ url: u, status: resp.status(), method: resp.request().method() });
   }
+});
+
+// Capture interstitial POST body (contains the plaintext payload)
+await ctx.route(/interstitial/, async (route) => {
+  const req = route.request();
+  if (req.method() === "POST") {
+    const postData = req.postData();
+    if (postData) {
+      console.log(`[capture] interstitial POST: ${postData.length} bytes`);
+      capturedPayloads.push({ url: req.url(), body: postData, timestamp: Date.now() });
+    }
+  }
+  await route.continue();
 });
 
 // Step 0: check exit IP
@@ -274,6 +284,7 @@ const plaintext = {
 writeFileSync(join(OUT, "bypass-plaintext.json"), JSON.stringify(plaintext, null, 2));
 writeFileSync(join(OUT, "bypass-network.json"), JSON.stringify(network, null, 2));
 writeFileSync(join(OUT, "bypass-console.txt"), consoleMsgs.join("\n"));
+writeFileSync(join(OUT, "bypass-payloads.json"), JSON.stringify(capturedPayloads, null, 2));
 
 await ctx.close();
 console.log(`\n  artifacts → ${OUT}/bypass*`);

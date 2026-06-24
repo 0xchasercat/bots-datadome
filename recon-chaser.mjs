@@ -186,12 +186,17 @@ try {
     capturedPayloads,
     interstitialResponse,
     initial403,
-    hasITagJs: !!iJsBody,
     iJsSize: iJsBody?.length || 0,
     capturedAt: new Date().toISOString(),
   };
 
   writeFileSync(join(OUT, "recon-chaser.json"), JSON.stringify(result, null, 2));
+
+  // Save raw i.js for comparison
+  if (iJsBody) {
+    writeFileSync(join(OUT, "recon-chaser-ijs.js"), iJsBody);
+    console.log(`\n  i.js saved: ${iJsBody.length} bytes`);
+  }
 
   // Save i.js for analysis
   if (iJsBody) {

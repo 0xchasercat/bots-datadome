@@ -30,13 +30,13 @@ const userDataDir = mkdtempSync(join(tmpdir(), "dd-recon-"));
 const ctx = await chromium.launchPersistentContext(userDataDir, {
   headless: false,
   channel: "chrome",
-  viewport: { width: 1366, height: 900 },
 });
 const page = await ctx.newPage();
 
 const jsResponses = [];
 let tagsBody = null;
 let tagsUrl = null;
+let iJsBody = null;
 
 page.on("response", async (resp) => {
   const u = resp.url();
@@ -48,15 +48,15 @@ page.on("response", async (resp) => {
       bytes: parseInt(resp.headers()["content-length"] || "0"),
     });
   }
-  // Capture tags.js from any subdomain (dd.g2.com, js.datadome.co, etc.)
-  // Prioritize tags.js over i.js since i.js is just the loader
-  if (/tags\.js/.test(u)) {
+  // Capture i.js — this is the fingerprint collector
+  if (/captcha-delivery\.com\/i\.js/.test(u)) {
     try {
-      tagsBody = (await resp.body()).toString("utf8");
-      tagsUrl = u;
+      iJsBody = (await resp.body()).toString("utf8");
+      console.log(`[i.js] captured ${iJsBody.length} bytes`);
     } catch {}
-  } else if (/captcha-delivery\.com\/i\.js/.test(u) && !tagsBody) {
-    // fallback: capture i.js only if tags.js hasn't been seen yet
+  }
+  // Capture tags.js
+  if (/tags\.js/.test(u)) {
     try {
       tagsBody = (await resp.body()).toString("utf8");
       tagsUrl = u;
@@ -97,10 +97,16 @@ if (tagsBody) {
 
   const version = versionMatch ? versionMatch[1] : null;
   const isV5 = version && version.startsWith("5.");
-  const isV570Plus = version && (() => {
-    const [maj, min, pat] = version.split(".").map(Number);
-    return maj > 5 || (maj === 5 && min > 7) || (maj === 5 && min === 7 && pat >= 0);
-  })();
+  const isV570Plus =
+    version &&
+    (() => {
+      const [maj, min, pat] = version.split(".").map(Number);
+      return (
+        maj > 5 ||
+        (maj === 5 && min > 7) ||
+        (maj === 5 && min === 7 && pat >= 0)
+      );
+    })();
 
   bundleInfo = {
     url: tagsUrl,
@@ -129,8 +135,12 @@ if (tagsBody) {
     console.log(`  xorshift:   ${xorshift_new ? "PRESENT ✓" : "ABSENT"}`);
     console.log(`  V(n,t) PRNG: ${prng_V ? "PRESENT ✓" : "ABSENT"}`);
     console.log(`  custom b64: ${custom_b64 ? "PRESENT ✓" : "ABSENT"}`);
-    console.log(`  seed const: ${seed_constant ? "PRESENT ✓ (11027890091)" : "ABSENT"}`);
-    console.log(`  final XOR:  ${final_xor ? "PRESENT ✓ (1809053797)" : "ABSENT"}`);
+    console.log(
+      `  seed const: ${seed_constant ? "PRESENT ✓ (11027890091)" : "ABSENT"}`,
+    );
+    console.log(
+      `  final XOR:  ${final_xor ? "PRESENT ✓ (1809053797)" : "ABSENT"}`,
+    );
     console.log(`\n  → Use decrypt_v570.mjs for this bundle`);
   } else if (vnt) {
     console.log(`\n  [4.x cipher detected]`);
@@ -140,7 +150,9 @@ if (tagsBody) {
   } else {
     console.log(`\n  [Unknown cipher version]`);
     console.log(`  v(n,t):     ${vnt ? "PRESENT" : "ABSENT"}`);
-    console.log(`  xorshift:   ${xorshift_old || xorshift_new ? "PRESENT" : "ABSENT"}`);
+    console.log(
+      `  xorshift:   ${xorshift_old || xorshift_new ? "PRESENT" : "ABSENT"}`,
+    );
   }
 } else {
   console.log(
@@ -157,12 +169,19 @@ writeFileSync(
       jsResponseCount: jsResponses.length,
       ddRelated: matches,
       bundle: bundleInfo,
+      iJsSize: iJsBody?.length || 0,
       capturedAt: new Date().toISOString(),
     },
     null,
     2,
   ),
 );
+
+// Save raw i.js for comparison
+if (iJsBody) {
+  writeFileSync(join(OUT, "recon-ijs.js"), iJsBody);
+  console.log(`\n  i.js saved: ${iJsBody.length} bytes`);
+}
 
 await ctx.close();
 console.log(`\n  artifacts → ${OUT}/recon.json`);

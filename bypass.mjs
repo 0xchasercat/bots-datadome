@@ -93,9 +93,8 @@ function patchTagsJs(raw) {
     return { patched: raw.slice(0, headEnd) + injection + raw.slice(headEnd), version: "4.x" };
   }
 
-  // 5.7.0+: look for the main collection entry — q = function(n, t) {
-  // or the V(n,t) PRNG constructor as a marker
-  const re570 = /return q\s*=\s*function\s*\(\s*n\s*,\s*t\s*\)\s*\{/;
+  // 5.7.0+: look for the main collection entry — return q=function(n,t){
+  const re570 = /return q=function\s*\(\s*n\s*,\s*t\s*\)\s*\{/;
   const m5 = raw.match(re570);
   if (m5) {
     // Inject at the start of the q function body
@@ -142,9 +141,10 @@ await ctx.addInitScript(initScript());
 
 // Patch tags.js in-flight (works for both 4.x and 5.7.0+)
 let patchInfo = { patched: false };
-await ctx.route(/tags\.js/, async (route) => {
+await ctx.route("**/*tags*", async (route) => {
   const url = route.request().url();
-  if (!/datadome|captcha-delivery/.test(url)) return route.continue();
+  if (!/datadome|captcha-delivery|\.dd\./.test(url)) return route.continue();
+  console.log(`[patch] intercepted: ${url}`);
   try {
     const resp = await route.fetch();
     const raw = (await resp.body()).toString("utf8");

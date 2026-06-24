@@ -88,7 +88,7 @@ function patchTagsJs(raw) {
     return { patched: raw.slice(0, end) + inj + raw.slice(end), version: "4.x" };
   }
   // 5.7.0+
-  const re570 = /return q\s*=\s*function\s*\(\s*n\s*,\s*t\s*\)\s*\{/;
+  const re570 = /return q=function\s*\(\s*n\s*,\s*t\s*\)\s*\{/;
   const m5 = raw.match(re570);
   if (m5) {
     const inj = `try{(window.__ddTap=window.__ddTap||[]).push([n,t,performance.now()|0])}catch(_){}`;

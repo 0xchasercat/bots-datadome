@@ -90,7 +90,7 @@ if (tagsBody) {
 
   // 5.7.0+ patterns
   const xorshift_new = /\(n\^=n<<13\)\^n>>17\)^n<<5/.test(tagsBody);
-  const prng_V = /function V\(n,t\)\{var i=n/.test(tagsBody);
+  const prng_V = /return q=function/.test(tagsBody);
   const custom_b64 = /QSdCN\/3956tpzwLMoDFxrVh/.test(tagsBody);
   const seed_constant = /11027890091/.test(tagsBody);
   const final_xor = /1809053797/.test(tagsBody);

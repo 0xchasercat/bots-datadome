@@ -135,9 +135,8 @@ await ctx.addInitScript(initScript());
 
 // Patch tags.js in-flight (works for both 4.x and 5.7.0+)
 let patchInfo = { patched: false };
-await ctx.route("**/*tags*", async (route) => {
+await ctx.route(/tags\.js/, async (route) => {
   const url = route.request().url();
-  if (!/datadome|captcha-delivery|\.dd\./.test(url)) return route.continue();
   console.log(`[patch] intercepted: ${url}`);
   try {
     const resp = await route.fetch();

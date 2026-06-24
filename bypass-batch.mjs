@@ -128,8 +128,6 @@ await ctx.addInitScript(initScript());
 
 let lastPatch = { patched: false };
 await ctx.route(/tags\.js/, async (route) => {
-  const url = route.request().url();
-  if (!/datadome|captcha-delivery/.test(url)) return route.continue();
   try {
     const resp = await route.fetch();
     const raw = (await resp.body()).toString("utf8");
@@ -145,6 +143,11 @@ await ctx.route(/tags\.js/, async (route) => {
         contentType: resp.headers()["content-type"] || "application/javascript",
         body: r.patched,
       });
+    }
+  } catch {
+    try { await route.continue(); } catch {}
+  }
+});
     }
   } catch {
     try { await route.continue(); } catch {}
